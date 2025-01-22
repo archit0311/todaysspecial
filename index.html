@@ -6,89 +6,105 @@
     <title>Today's Specials</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f7f6;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f8f9fa;
+            min-height: 100vh;
         }
+
         .container {
-            text-align: center;
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
             width: 90%;
+            max-width: 700px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            font-size: 2rem;
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 32px;
             color: #333;
-        }
-        .special {
-            margin: 15px 0;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-        .special:last-child {
-            border-bottom: none;
-        }
-        .special h2 {
+            font-weight: bold;
             margin: 0;
-            font-size: 1.2rem;
-            color: #007bff;
         }
-        .special p {
-            margin: 5px 0;
-            font-size: 0.9rem;
-            color: #555;
+
+        .special-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .special-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .special-item:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .special-item h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .rate {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00BFAE; /* Slightly more subtle color */
+            margin-left: 20px; /* Space between item name and rate */
+        }
+
+        .description {
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Today's Specials</h1>
-        <div id="specials-list">
-            <!-- Specials will be dynamically loaded here -->
+        <div class="header">
+            <h1>Today's Specials</h1>
         </div>
+        <ul class="special-list">
+            <li class="special-item">
+                <h2>
+                    Paneer Butter Masala
+                    <span class="rate">₹250</span>
+                </h2>
+                <p class="description">Creamy tomato-based paneer curry.</p>
+            </li>
+            <li class="special-item">
+                <h2>
+                    Veg Biryani
+                    <span class="rate">₹200</span>
+                </h2>
+                <p class="description">Fragrant rice with mixed vegetables.</p>
+            </li>
+            <!-- Add more items manually here -->
+        </ul>
     </div>
-
-    <script>
-        // Update this array to modify the specials
-        const specials = [
-            {
-                name: "Paneer Butter Masala",
-                rate: "₹250",
-                description: "Creamy tomato-based paneer curry."
-            },
-            {
-                name: "Veg Biryani",
-                rate: "₹200",
-                description: "Fragrant rice with mixed vegetables."
-            },
-            {
-                name: "Masala Dosa",
-                rate: "₹150",
-                description: "Crispy dosa served with sambar and chutneys."
-            }
-        ];
-
-        // Function to render the specials
-        function renderSpecials() {
-            const specialsList = document.getElementById('specials-list');
-            specialsList.innerHTML = specials.map(special => `
-                <div class="special">
-                    <h2>${special.name} - ${special.rate}</h2>
-                    <p>${special.description}</p>
-                </div>
-            `).join('');
-        }
-
-        // Initial render
-        renderSpecials();
-    </script>
 </body>
 </html>
