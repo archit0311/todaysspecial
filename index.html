@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Specials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+        .special {
+            margin: 15px 0;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .special:last-child {
+            border-bottom: none;
+        }
+        .special h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #007bff;
+        }
+        .special p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Today's Specials</h1>
+        <div id="specials-list">
+            <!-- Specials will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Update this array to modify the specials
+        const specials = [
+            {
+                name: "Paneer Butter Masala",
+                rate: "₹250",
+                description: "Creamy tomato-based paneer curry."
+            },
+            {
+                name: "Veg Biryani",
+                rate: "₹200",
+                description: "Fragrant rice with mixed vegetables."
+            },
+            {
+                name: "Masala Dosa",
+                rate: "₹150",
+                description: "Crispy dosa served with sambar and chutneys."
+            }
+        ];
+
+        // Function to render the specials
+        function renderSpecials() {
+            const specialsList = document.getElementById('specials-list');
+            specialsList.innerHTML = specials.map(special => `
+                <div class="special">
+                    <h2>${special.name} - ${special.rate}</h2>
+                    <p>${special.description}</p>
+                </div>
+            `).join('');
+        }
+
+        // Initial render
+        renderSpecials();
+    </script>
+</body>
+</html>
