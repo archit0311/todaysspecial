@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Today's Specials</title>
+    <title>Olive & Brew Today's Specials</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            background-color: #EFF3EA;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,7 +19,7 @@
         .container {
             width: 90%;
             max-width: 700px;
-            background-color: #ffffff;
+            background-color: #FFFDF0;
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -30,11 +30,17 @@
             margin-bottom: 40px;
         }
 
-        .header h1 {
+        .header .title {
+            color: #578E7E;
             font-size: 32px;
-            color: #333;
             font-weight: bold;
             margin: 0;
+        }
+
+        .header .subtitle {
+            color: #444;
+            font-size: 20px;
+            margin-top: 5px;
         }
 
         .special-list {
@@ -44,7 +50,7 @@
         }
 
         .special-item {
-            background-color: #fff;
+            background-color: #EFF3EA;
             border-radius: 8px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
@@ -59,51 +65,60 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         }
 
-        .special-item h2 {
-            margin: 0;
-            font-size: 22px;
-            color: #333;
+        .special-item-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .special-item h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #578E7E;
             font-weight: 600;
         }
 
-        .rate {
+        .special-item .rate {
             font-size: 18px;
             font-weight: bold;
-            color: #00BFAE; /* Slightly more subtle color */
-            margin-left: 20px; /* Space between item name and rate */
+            color: #00BFAE;
         }
 
-        .description {
+        .special-item p {
             font-size: 14px;
             color: #666;
-            margin: 10px 0;
+            margin: 10px 0 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Today's Specials</h1>
+            <div class="title">Olive & Brew</div>
+            <div class="subtitle">Today's Specials</div>
         </div>
-        <ul class="special-list">
+        <ul class="special-list" id="special-list">
             <li class="special-item">
-                <h2>
-                    Paneer Butter Masala
-                    <span class="rate">₹250</span>
-                </h2>
-                <p class="description">Creamy tomato-based paneer curry.</p>
+                <div class="special-item-header">
+                    <h2>Jalapeno Poppers</h2>
+                    <span class="rate">Rs 259</span>
+                </div>
+                <p>Melted cheesy poppers with fresh jalapeno.</p>
             </li>
             <li class="special-item">
-                <h2>
-                    Veg Biryani
-                    <span class="rate">₹200</span>
-                </h2>
-                <p class="description">Fragrant rice with mixed vegetables.</p>
+                <div class="special-item-header">
+                    <h2>Pan Fried Noodles with Gravy</h2>
+                    <span class="rate">Rs 339</span>
+                </div>
+                <p>Crisp Noodles with gravy.</p>
             </li>
-            <!-- Add more items manually here -->
+            <li class="special-item">
+                <div class="special-item-header">
+                    <h2>Creamcheese Gyoza</h2>
+                    <span class="rate">Rs 299</span>
+                </div>
+                <p>Japanese Gyoza Dumplings steamed and Pan Fried.</p>
+            </li>
         </ul>
     </div>
 </body>
