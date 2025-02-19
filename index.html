@@ -3,123 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olive & Brew Today's Specials</title>
+    <title>Olive & Brew - Bharuch</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #EFF3EA;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 700px;
-            background-color: #FFFDF0;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header {
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .header .title {
-            color: #578E7E;
-            font-size: 32px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .header .subtitle {
-            color: #444;
-            font-size: 20px;
-            margin-top: 5px;
-        }
-
-        .special-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .special-item {
-            background-color: #EFF3EA;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            background-color: #f8f9fa;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: box-shadow 0.3s ease;
         }
-
-        .special-item:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        .special-item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
         }
-
-        .special-item h2 {
-            margin: 0;
-            font-size: 22px;
-            color: #578E7E;
-            font-weight: 600;
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
         }
-
-        .special-item .rate {
-            font-size: 18px;
+        .contact {
+            margin-top: 20px;
+        }
+        .contact a {
+            color: #007bff;
+            text-decoration: none;
             font-weight: bold;
-            color: #00BFAE;
-        }
-
-        .special-item p {
-            font-size: 14px;
-            color: #666;
-            margin: 10px 0 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="title">Olive & Brew</div>
-            <div class="subtitle">Today's Specials</div>
+        <h1>Welcome to Olive & Brew</h1>
+        <p>A vibrant destination in the heart of Bharuch, offering an eclectic range of international delicacies tailored to Indian tastes.</p>
+        
+        <img src="https://tse3.mm.bing.net/th?id=OIP.haahzCeCUmPeRPColaxB4wHaE8&pid=Api" alt="Olive & Brew Interior">
+        
+        <h2>Menu Highlights</h2>
+        <p>Indulge in a diverse menu featuring Continental, Chinese, Italian, and Fast Food.</p>
+        <a href="https://bio.link/olivebre">View Full Menu</a>
+        
+        <h2>Operating Hours</h2>
+        <p>Open daily from <strong>11:00 AM - 11:00 PM</strong></p>
+        
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p><strong>Address:</strong> 402, Mabel Complex, Above Axis Bank, Jyoti Nagar, Bharuch, Gujarat</p>
+            <p><strong>Phone:</strong> <a href="tel:+919081556777">+91 90815 56777</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919081556777">Chat Now</a></p>
+            <p><strong>Location:</strong> <a href="https://goo.gl/maps/oliveandbrew">Google Maps</a></p>
         </div>
-        <ul class="special-list" id="special-list">
-            <li class="special-item">
-                <div class="special-item-header">
-                    <h2>Jalapeno Poppers</h2>
-                    <span class="rate">Rs 259</span>
-                </div>
-                <p>Melted cheesy poppers with fresh jalapeno.</p>
-            </li>
-            <li class="special-item">
-                <div class="special-item-header">
-                    <h2>Pan Fried Noodles with Gravy</h2>
-                    <span class="rate">Rs 339</span>
-                </div>
-                <p>Crisp Noodles with gravy.</p>
-            </li>
-            <li class="special-item">
-                <div class="special-item-header">
-                    <h2>Creamcheese Gyoza</h2>
-                    <span class="rate">Rs 299</span>
-                </div>
-                <p>Japanese Gyoza Dumplings steamed and Pan Fried.</p>
-            </li>
-        </ul>
     </div>
 </body>
 </html>
