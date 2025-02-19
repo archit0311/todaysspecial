@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Special Menu</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.6/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const menuItems = [
+            { name: "Jackfruit Tostadas", price: "₹250", description: "Crispy tostadas topped with pulled jackfruit, avocado, and tangy salsa." },
+            { name: "Lemon Butter Ravioli", price: "₹320", description: "Handmade ravioli drizzled with a rich lemon butter sauce." },
+            { name: "Szechuan Fried Rice", price: "₹280", description: "Indo-Chinese style rice with bold Szechuan flavors and crisp vegetables." },
+            { name: "Mocktail - Pineapple Breeze", price: "₹180", description: "Refreshing pineapple and citrus mocktail with a hint of mint." }
+        ];
+
+        function SpecialMenu() {
+            const [openIndex, setOpenIndex] = useState(null);
+
+            const toggleDescription = (index) => {
+                setOpenIndex(openIndex === index ? null : index);
+            };
+
+            return (
+                <div className="menu-container">
+                    <h1>Today's Special</h1>
+                    {menuItems.map((item, index) => (
+                        <div key={index} className="menu-item">
+                            <div className="menu-header" onClick={() => toggleDescription(index)}>
+                                <span>{item.name}</span>
+                                <span>{item.price} {openIndex === index ? "▲" : "▼"}</span>
+                            </div>
+                            {openIndex === index && (
+                                <p className="menu-description">{item.description}</p>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<SpecialMenu />);
+    </script>
+</body>
+</html>
+
