@@ -1,48 +1,101 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive & Brew - Today's Special</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.6/babel.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .menu-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .menu-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        .menu-description {
+            margin-top: 5px;
+            color: #555;
+        }
+        .description {
+            margin-top: 20px;
+            max-width: 500px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olive & Brew</h1>
+    <div id="root" class="menu-container"></div>
+    <p class="description">
+        Our Today's Specials are exclusive chef-curated dishes, either in the experimental phase before joining our main menu or requiring special preparation in limited quantities. Featuring them here ensures that our guests experience these unique creations before they become widely available.
+    </p>
+    <script type="text/babel">
+        const { useState } = React;
 
-const menuItems = [
-    { name: "Jackfruit Tostadas", price: "₹250", description: "Crispy tostadas topped with pulled jackfruit, avocado, and tangy salsa." },
-    { name: "Lemon Butter Ravioli", price: "₹320", description: "Handmade ravioli drizzled with a rich lemon butter sauce." },
-    { name: "Szechuan Fried Rice", price: "₹280", description: "Indo-Chinese style rice with bold Szechuan flavors and crisp vegetables." },
-    { name: "Mocktail - Pineapple Breeze", price: "₹180", description: "Refreshing pineapple and citrus mocktail with a hint of mint." }
-];
+        const menuItems = [
+            { name: "Jackfruit Tostadas", price: "₹250", description: "Crispy tostadas topped with pulled jackfruit, avocado, and tangy salsa." },
+            { name: "Lemon Butter Ravioli", price: "₹320", description: "Handmade ravioli drizzled with a rich lemon butter sauce." },
+            { name: "Szechuan Fried Rice", price: "₹280", description: "Indo-Chinese style rice with bold Szechuan flavors and crisp vegetables." },
+            { name: "Mocktail - Pineapple Breeze", price: "₹180", description: "Refreshing pineapple and citrus mocktail with a hint of mint." }
+        ];
 
-export default function SpecialMenu() {
-    const [openIndex, setOpenIndex] = useState(null);
+        function SpecialMenu() {
+            const [openIndex, setOpenIndex] = useState(null);
 
-    const toggleDescription = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
+            const toggleDescription = (index) => {
+                setOpenIndex(openIndex === index ? null : index);
+            };
 
-    return (
-        <motion.div 
-            initial={{ opacity: 0, y: -20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.5 }}
-            className="flex flex-col justify-center items-center min-h-screen bg-gray-100 p-6 text-center"
-        >
-            <h1 className="text-5xl font-extrabold mb-4 tracking-wide font-[Poppins] text-lg">Olive & Brew</h1>
-            <div className="bg-white p-6 rounded-xl shadow-md w-96">
-                <h2 className="text-2xl font-bold mb-4">Today's Special</h2>
-                {menuItems.map((item, index) => (
-                    <div key={index}>
-                        <div
-                            className="flex justify-between items-center p-3 border-b cursor-pointer"
-                            onClick={() => toggleDescription(index)}
-                        >
-                            <span>{item.name}</span>
-                            <span>{item.price} {openIndex === index ? "▲" : "▼"}</span>
+            return (
+                <>
+                    {menuItems.map((item, index) => (
+                        <div key={index} className="menu-item" onClick={() => toggleDescription(index)}>
+                            <div className="menu-header">
+                                <span>{item.name}</span>
+                                <span>{item.price} {openIndex === index ? "▲" : "▼"}</span>
+                            </div>
+                            {openIndex === index && (
+                                <p className="menu-description">{item.description}</p>
+                            )}
                         </div>
-                        {openIndex === index && (
-                            <p className="p-3 text-gray-600">{item.description}</p>
-                        )}
-                    </div>
-                ))}
-            </div>
-            <p className="mt-6 text-gray-700 max-w-lg text-sm">
-                Our Today's Specials are exclusive chef-curated dishes, either in the experimental phase before joining our main menu or requiring special preparation in limited quantities. Featuring them here ensures that our guests experience these unique creations before they become widely available.
-            </p>
-        </motion.div>
-    );
-}
+                    ))}
+                </>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<SpecialMenu />);
+    </script>
+</body>
+</html>
