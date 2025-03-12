@@ -65,11 +65,9 @@
         const { useState } = React;
 
         const menuItems = [
-            { name: "Pale Di Potato", price: "₹229", description: "In house made - Crispy Potato wedges marinated and fried and seasoned to perfection." },
-            { name: "Pan Fried noodles", price: "₹329", description: "Crispy pan-fried noodles topped with a flavorful, savory vegetable gravy. A perfect balance of crunch and rich, umami-packed sauce.
-" },
-{ name: "Lemon Butter Ravioli", price: "₹389", description: "Delicate ravioli tossed in a rich, velvety lemon butter sauce, a perfect balance of citrusy brightness and creamy indulgence.
-" }
+            { name: "Pale Di Potato", price: "₹229", description: "In-house made crispy potato wedges, marinated, fried, and seasoned to perfection." },
+            { name: "Pan Fried Noodles", price: "₹329", description: "Crispy pan-fried noodles topped with a flavorful, savory vegetable gravy. A perfect balance of crunch and rich, umami-packed sauce." },
+            { name: "Lemon Butter Ravioli", price: "₹389", description: "Delicate ravioli tossed in a rich, velvety lemon butter sauce, a perfect balance of citrusy brightness and creamy indulgence." }
         ];
 
         function SpecialMenu() {
@@ -96,7 +94,7 @@
             );
         }
 
-        ReactDOM.createRoot(document.getElementById("root")).render(<SpecialMenu />);
+        ReactDOM.render(<SpecialMenu />, document.getElementById("root"));
     </script>
 </body>
 </html>
