@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Creme Caramel",
+        "description": "A smooth and creamy caramel custard with a rich caramel topping.",
+        "price": 150,
+        "stock": "Y",
+        "holiday": "Y"
+    },
+    {
+        "name": "Oatmeal Raisin Cookie",
+        "description": "A soft and chewy cookie made with oats and sweet raisins.",
+        "price": 80,
+        "stock": "Y",
+        "holiday": "Y"
+    },
+    {
+        "name": "Chocolate Brownie",
+        "description": "A rich and fudgy chocolate brownie with a crispy top.",
+        "price": 120,
+        "stock": "Y",
+        "holiday": "N"
+    },
+    {
+        "name": "Blueberry Muffin",
+        "description": "A moist and fluffy muffin loaded with juicy blueberries.",
+        "price": 100,
+        "stock": "N",
+        "holiday": "Y"
+    },
+    {
+        "name": "Cheesecake",
+        "description": "A creamy and smooth cheesecake with a buttery biscuit base.",
+        "price": 200,
+        "stock": "Y",
+        "holiday": "Y"
+    }
+]
