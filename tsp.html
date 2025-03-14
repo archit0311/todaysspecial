@@ -36,24 +36,22 @@
             background: #f0f0f0;
         }
         .menu-item span {
-            flex: 1;
             white-space: normal;
             word-wrap: break-word;
         }
-        .price-arrow {
-            display: flex;
-            align-items: center;
-            text-align: right;
+        .menu-item .name {
+            flex: 1;
+            text-align: left;
         }
-        .price {
+        .menu-item .price {
             font-weight: bold;
             color: #333;
-            margin-right: 3px; /* Ensuring only 3px spacing */
+            text-align: right;
+            min-width: 60px;
         }
-        .arrow {
-            color: #666;
-            font-size: 14px;
-            transition: transform 0.2s;
+        .menu-item .arrow {
+            margin-left: 8px;
+            color: #555;
         }
         .menu-description {
             display: none;
@@ -96,11 +94,8 @@
                     menuItemDiv.classList.add("menu-item");
                     
                     menuItemDiv.innerHTML = `
-                        <span>${item.name}</span>
-                        <span class="price-arrow">
-                            <span class="price">₹${item.price}</span>
-                            <span class="arrow">▶</span>
-                        </span>
+                        <span class="name">${item.name}</span>
+                        <span class="price">₹${item.price} <span class="arrow">▼</span></span>
                     `;
                     
                     const descriptionDiv = document.createElement("div");
