@@ -5,51 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olive & Brew - Today's Special</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .menu-item { cursor: pointer; margin: 10px 0; }
-        .menu-item span { font-weight: bold; }
-        .menu-description { display: none; margin-left: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        #menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 80%;
+            max-width: 400px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.02);
+        }
+
+        .menu-item span {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-price {
+            color: #28a745;
+            font-size: 16px;
+        }
+
+        .menu-description {
+            display: none;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
     <h1>Today's Special</h1>
-    <div id="menu"></div>
+    <div id="menu-container"></div>
 
     <script>
         async function fetchMenu() {
-    try {
-        const response = await fetch("https://raw.githubusercontent.com/archit0311/todaysspecial/master/menu.json");
-        const text = await response.text();  // Read as plain text first
-        console.log("Raw JSON Response:", text); // Debugging output
+            try {
+                const response = await fetch("https://raw.githubusercontent.com/archit0311/todaysspecial/master/menu.json");
+                const text = await response.text();  
+                console.log("Raw JSON Response:", text); 
 
-        const menuItems = JSON.parse(text);  // Now try parsing
-        console.log("Parsed JSON:", menuItems); // See if it's an array or object
+                const menuItems = JSON.parse(text);
+                console.log("Parsed JSON:", menuItems);
 
-        displayMenu(menuItems);
-    } catch (error) {
-        console.error("Error fetching menu:", error);
-    }
-}
+                displayMenu(menuItems);
+            } catch (error) {
+                console.error("Error fetching menu:", error);
+            }
+        }
+
         function displayMenu(menuItems) {
-            const menuDiv = document.getElementById("menu");
+            const menuDiv = document.getElementById("menu-container");
             menuDiv.innerHTML = "";
 
             const today = new Date();
-            const isWeekend = (today.getDay() === 6 || today.getDay() === 0); // Saturday (6) or Sunday (0)
-            
+            const isWeekend = (today.getDay() === 6 || today.getDay() === 0);
+
             menuItems.forEach(item => {
                 if (item.stock.toLowerCase() === "y" && (!isWeekend || item.holidays.toLowerCase() === "y")) {
                     const menuItemDiv = document.createElement("div");
                     menuItemDiv.classList.add("menu-item");
-                    menuItemDiv.innerHTML = `<span>▶ ${item.name}</span>`;
-                    
+
+                    menuItemDiv.innerHTML = `
+                        <span>
+                            ▶ ${item.name}
+                            <span class="menu-price">₹${item.price}</span>
+                        </span>
+                    `;
+
                     const descriptionDiv = document.createElement("div");
                     descriptionDiv.classList.add("menu-description");
                     descriptionDiv.innerText = item.description;
-                    
+
                     menuItemDiv.appendChild(descriptionDiv);
                     menuDiv.appendChild(menuItemDiv);
-                    
+
                     menuItemDiv.addEventListener("click", () => {
                         descriptionDiv.style.display = (descriptionDiv.style.display === "none" || descriptionDiv.style.display === "") ? "block" : "none";
                     });
