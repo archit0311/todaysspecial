@@ -1,0 +1,40 @@
+const express = require("express");
+const fs = require("fs");
+const cors = require("cors");
+
+const app = express();
+const PORT = 3000;
+
+// Enable CORS to allow frontend to fetch data from this server
+app.use(cors());
+
+// Load menu data from JSON file
+const loadMenu = () => {
+    const rawData = fs.readFileSync("menu.json");
+    return JSON.parse(rawData);
+};
+
+// Function to filter menu based on stock and holiday logic
+const filterMenu = (menu) => {
+    const today = new Date().getDay(); // 0 = Sunday, 6 = Saturday
+    const isWeekend = today === 0 || today === 6;
+
+    return menu.filter((item) => {
+        const inStock = item.stock.toLowerCase() === "y";
+        const isAvailable = item.holiday.toLowerCase() === "y" || !isWeekend;
+
+        return inStock && isAvailable;
+    });
+};
+
+// API endpoint to get the filtered menu
+app.get("/menu", (req, res) => {
+    const menu = loadMenu();
+    const filteredMenu = filterMenu(menu);
+    res.json(filteredMenu);
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
