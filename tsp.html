@@ -7,7 +7,7 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            background-color: #f8f8f8;
+            background-color: #f4f4f4;
             text-align: center;
             padding: 20px;
         }
@@ -16,36 +16,44 @@
             margin: 0 auto;
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
         }
-        h1 { color: #333; }
+        h1 { color: #222; }
         p { color: #555; margin-bottom: 20px; }
         .menu-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 15px;
+            padding: 12px 15px;
             border-bottom: 1px solid #ddd;
             cursor: pointer;
             font-size: 16px;
             text-align: left;
+            transition: background 0.2s ease-in-out;
+        }
+        .menu-item:hover {
+            background: #f0f0f0;
         }
         .menu-item span {
             flex: 1;
             white-space: normal;
             word-wrap: break-word;
         }
-        .price {
-            min-width: 60px;
+        .price-arrow {
+            display: flex;
+            align-items: center;
             text-align: right;
+        }
+        .price {
             font-weight: bold;
-            color: #444;
+            color: #333;
+            margin-right: 3px; /* Ensuring only 3px spacing */
         }
         .arrow {
-            color: #888;
+            color: #666;
             font-size: 14px;
-            padding-left: 10px;
+            transition: transform 0.2s;
         }
         .menu-description {
             display: none;
@@ -53,6 +61,8 @@
             font-size: 14px;
             color: #666;
             text-align: left;
+            border-bottom: 1px solid #ddd;
+            background: #fafafa;
         }
     </style>
 </head>
@@ -87,8 +97,10 @@
                     
                     menuItemDiv.innerHTML = `
                         <span>${item.name}</span>
-                        <span class="price">₹${item.price}</span>
-                        <span class="arrow">▶</span>
+                        <span class="price-arrow">
+                            <span class="price">₹${item.price}</span>
+                            <span class="arrow">▶</span>
+                        </span>
                     `;
                     
                     const descriptionDiv = document.createElement("div");
@@ -99,7 +111,14 @@
                     menuDiv.appendChild(descriptionDiv);
                     
                     menuItemDiv.addEventListener("click", () => {
-                        descriptionDiv.style.display = (descriptionDiv.style.display === "none" || descriptionDiv.style.display === "") ? "block" : "none";
+                        const isOpen = descriptionDiv.style.display === "block";
+                        document.querySelectorAll(".menu-description").forEach(desc => desc.style.display = "none");
+                        document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("open"));
+                        
+                        if (!isOpen) {
+                            descriptionDiv.style.display = "block";
+                            menuItemDiv.classList.add("open");
+                        }
                     });
                 }
             });
