@@ -4,125 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olive & Brew - Today's Special</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.6/babel.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap">
     <style>
-    body { 
-        font-family: Arial, sans-serif; 
-        background-color: #f8f8f8; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        min-height: 100vh; 
-        flex-direction: column; 
-        padding: 20px;
-    }
-    
-    h1 { 
-        text-align: center; 
-        color: #333; 
-        margin-bottom: 20px; 
-    }
-    
-    #menu {
-        width: 90%;
-        max-width: 600px;
-    }
-
-    .menu-item { 
-        cursor: pointer; 
-        margin: 10px 0; 
-        padding: 15px; 
-        background: #fff; 
-        border-radius: 8px; 
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.1); 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center;
-    }
-
-    .menu-item span { 
-        font-weight: bold; 
-        font-size: 16px; 
-        display: flex; 
-        align-items: center;
-    }
-
-    .menu-item span::before {
-        content: "▶";
-        margin-right: 8px;
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .menu-item.open span::before {
-        transform: rotate(90deg);
-    }
-
-    .menu-price {
-        font-weight: bold;
-        color: #666;
-    }
-
-    .menu-description { 
-        display: none; 
-        margin-top: 10px; 
-        padding-left: 25px; 
-        font-size: 14px; 
-        color: #555;
-    }
-
-    .menu-item.open .menu-description {
-        display: block;
-    }
-</style>
-
-
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .menu-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .menu-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        .menu-description {
+            margin-top: 5px;
+            color: #555;
+        }
+        .description {
+            margin-top: 20px;
+            max-width: 500px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <h1>Today's Special</h1>
-    <div id="menu"></div>
+    <div id="root" class="menu-container"></div>
+    <p class="description">
+        Our Today's Specials are exclusive chef-curated dishes, either in the experimental phase before joining our main menu or requiring special preparation in limited quantities. Featuring them here ensures that our guests experience these unique creations before they become widely available.
+    </p>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
 
-    <script>
-        async function fetchMenu() {
-    try {
-        const response = await fetch("https://raw.githubusercontent.com/archit0311/todaysspecial/master/menu.json");
-        const text = await response.text();  // Read as plain text first
-        console.log("Raw JSON Response:", text); // Debugging output
+        function SpecialMenu() {
+            const [menuItems, setMenuItems] = useState([]);
+            const [openIndex, setOpenIndex] = useState(null);
 
-        const menuItems = JSON.parse(text);  // Now try parsing
-        console.log("Parsed JSON:", menuItems); // See if it's an array or object
-
-        displayMenu(menuItems);
-    } catch (error) {
-        console.error("Error fetching menu:", error);
-    }
-}
-        function displayMenu(menuItems) {
-            const menuDiv = document.getElementById("menu");
-            menuDiv.innerHTML = "";
-
-            const today = new Date();
-            const isWeekend = (today.getDay() === 6 || today.getDay() === 0); // Saturday (6) or Sunday (0)
-            
-            menuItems.forEach(item => {
-                if (item.stock.toLowerCase() === "y" && (!isWeekend || item.holidays.toLowerCase() === "y")) {
-                    const menuItemDiv = document.createElement("div");
-                    menuItemDiv.classList.add("menu-item");
-                    menuItemDiv.innerHTML = `<span>▶ ${item.name}</span>`;
-                    
-                    const descriptionDiv = document.createElement("div");
-                    descriptionDiv.classList.add("menu-description");
-                    descriptionDiv.innerText = item.description;
-                    
-                    menuItemDiv.appendChild(descriptionDiv);
-                    menuDiv.appendChild(menuItemDiv);
-                    
-                    menuItemDiv.addEventListener("click", () => {
-                        descriptionDiv.style.display = (descriptionDiv.style.display === "none" || descriptionDiv.style.display === "") ? "block" : "none";
-                    });
+            useEffect(() => {
+                async function fetchMenu() {
+                    try {
+                        const response = await fetch("menu.json");
+                        const data = await response.json();
+                        setMenuItems(data.menu);
+                    } catch (error) {
+                        console.error("Error fetching menu:", error);
+                    }
                 }
+                fetchMenu();
+            }, []);
+
+            const today = new Date().getDay();
+            const isWeekend = (today === 0 || today === 6); 
+
+            const filteredItems = menuItems.filter(item => {
+                if (item.stock.toUpperCase() !== "Y") return false;
+                if (isWeekend && item.holidays.toUpperCase() !== "Y") return false;
+                return true;
             });
+
+            const toggleDescription = (index) => {
+                setOpenIndex(openIndex === index ? null : index);
+            };
+
+            return (
+                <>
+                    {filteredItems.length > 0 ? (
+                        filteredItems.map((item, index) => (
+                            <div key={index} className="menu-item" onClick={() => toggleDescription(index)}>
+                                <div className="menu-header">
+                                    <span>{item.name}</span>
+                                    <span>{item.price} {openIndex === index ? "▲" : "▼"}</span>
+                                </div>
+                                {openIndex === index && (
+                                    <p className="menu-description">{item.description}</p>
+                                )}
+                            </div>
+                        ))
+                    ) : (
+                        <p>No items available today.</p>
+                    )}
+                </>
+            );
         }
 
-        fetchMenu();
+        ReactDOM.render(<SpecialMenu />, document.getElementById("root"));
     </script>
 </body>
 </html>
