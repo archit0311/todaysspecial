@@ -42,13 +42,6 @@
     "holidays": "Y"
   },
   {
-    "name": "Oatmeal cookie with Vanilla Ice Cream",
-    "price": "179",
-    "description": "Chewy and wholesome oatmeal cookie. A perfect blend of warmth and texture.",
-    "stock": "Y",
-    "holidays": "Y"
-  },
-  {
     "name": "Creme Caramel",
     "price": "209",
     "description": "Silky smooth caramel custard with a rich, golden caramel glaze. A perfect balance of sweetness and creaminess.",
