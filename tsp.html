@@ -66,20 +66,20 @@
 
         function SpecialMenu() {
             const [menuItems, setMenuItems] = useState([]);
-            const [openIndex, setOpenIndex] = useState(null);
 
-            useEffect(() => {
-                async function fetchMenu() {
-                    try {
-                        const response = await fetch("menu.json");
-                        const data = await response.json();
-                        setMenuItems(data.menu);
-                    } catch (error) {
-                        console.error("Error fetching menu:", error);
-                    }
-                }
-                fetchMenu();
-            }, []);
+useEffect(() => {
+    async function fetchMenu() {
+        try {
+            const response = await fetch("menu.json");
+            const data = await response.json();
+            setMenuItems(Array.isArray(data.menu) ? data.menu : []); // Ensure it's an array
+        } catch (error) {
+            console.error("Error fetching menu:", error);
+            setMenuItems([]); // Set to an empty array if fetching fails
+        }
+    }
+    fetchMenu();
+}, []);
 
             const today = new Date().getDay();
             const isWeekend = (today === 0 || today === 6); 
