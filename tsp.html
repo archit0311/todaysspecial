@@ -7,118 +7,104 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
             background-color: #f8f8f8;
-        }
-        h1 {
             text-align: center;
-            margin-bottom: 20px;
+            padding: 20px;
         }
-        .menu-container {
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
             background: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+        h1 { color: #333; }
+        p { color: #555; margin-bottom: 20px; }
         .menu-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            padding: 10px;
+            padding: 10px 15px;
             border-bottom: 1px solid #ddd;
+            cursor: pointer;
             font-size: 16px;
+            text-align: left;
         }
         .menu-item span {
-            flex-grow: 1;
-            text-align: left;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            padding-right: 10px;
+            flex: 1;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        .price {
+            min-width: 60px;
+            text-align: right;
+            font-weight: bold;
+            color: #444;
+        }
+        .arrow {
+            color: #888;
+            font-size: 14px;
+            padding-left: 10px;
         }
         .menu-description {
             display: none;
-            margin-left: 10px;
-            padding: 10px;
-            background: #f0f0f0;
-            border-radius: 5px;
-        }
-        .special-text {
-            margin-top: 20px;
-            text-align: center;
+            padding: 10px 15px;
             font-size: 14px;
-            color: #555;
+            color: #666;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <h1>Today's Special</h1>
-    <div class="menu-container" id="menu"></div>
-    <p class="special-text">Enjoy our handcrafted specials made with love and fresh ingredients, available only for a limited time!</p>
-    
+    <div class="container">
+        <h1>Today's Special</h1>
+        <p>Enjoy our handpicked specials, crafted fresh every day!</p>
+        <div id="menu"></div>
+    </div>
+
     <script>
         async function fetchMenu() {
             try {
                 const response = await fetch("https://raw.githubusercontent.com/archit0311/todaysspecial/master/menu.json");
-                const text = await response.text();
-                console.log("Raw JSON Response:", text);
-
-                const menuItems = JSON.parse(text);
-                console.log("Parsed JSON:", menuItems);
-
+                const menuItems = await response.json();
                 displayMenu(menuItems);
             } catch (error) {
                 console.error("Error fetching menu:", error);
             }
         }
-
+        
         function displayMenu(menuItems) {
             const menuDiv = document.getElementById("menu");
             menuDiv.innerHTML = "";
-
             const today = new Date();
             const isWeekend = (today.getDay() === 6 || today.getDay() === 0);
-
+            
             menuItems.forEach(item => {
                 if (item.stock.toLowerCase() === "y" && (!isWeekend || item.holidays.toLowerCase() === "y")) {
                     const menuItemDiv = document.createElement("div");
                     menuItemDiv.classList.add("menu-item");
-
-                    const nameSpan = document.createElement("span");
-                    nameSpan.textContent = item.name;
-
-                    const priceSpan = document.createElement("span");
-                    priceSpan.textContent = `₹${item.price}`;
-
-                    const arrowSpan = document.createElement("span");
-                    arrowSpan.textContent = "▶";
-                    arrowSpan.style.marginLeft = "10px";
+                    
+                    menuItemDiv.innerHTML = `
+                        <span>${item.name}</span>
+                        <span class="price">₹${item.price}</span>
+                        <span class="arrow">▶</span>
+                    `;
                     
                     const descriptionDiv = document.createElement("div");
                     descriptionDiv.classList.add("menu-description");
                     descriptionDiv.innerText = item.description;
-
-                    menuItemDiv.appendChild(nameSpan);
-                    menuItemDiv.appendChild(priceSpan);
-                    menuItemDiv.appendChild(arrowSpan);
+                    
                     menuDiv.appendChild(menuItemDiv);
                     menuDiv.appendChild(descriptionDiv);
-
+                    
                     menuItemDiv.addEventListener("click", () => {
                         descriptionDiv.style.display = (descriptionDiv.style.display === "none" || descriptionDiv.style.display === "") ? "block" : "none";
                     });
                 }
             });
         }
-
+        
         fetchMenu();
     </script>
 </body>
