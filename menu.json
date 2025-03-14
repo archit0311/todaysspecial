@@ -2,7 +2,7 @@
   {
     "name": "Pale Di Potato",
     "price": "229",
-    "description": "Crispy Fried Potato Wedges with skin marinated in flavourful spices.!!",
+    "description": "Crispy Fried Potato Wedges with skin marinated in flavourful spices",
     "stock": "Y",
     "holidays": "Y"
   },
@@ -28,7 +28,7 @@
     "holidays": "Y"
   },
   {
-    "name": "Pan Fried Noodle",
+    "name": "Pan Fried Noodles",
     "price": "329",
     "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
     "stock": "Y",
