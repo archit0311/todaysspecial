@@ -1,37 +1,58 @@
 [
-    {
-        "name": "Creme Caramel",
-        "description": "A smooth and creamy caramel custard with a rich caramel topping.",
-        "price": 150,
-        "stock": "Y",
-        "holiday": "Y"
-    },
-    {
-        "name": "Oatmeal Raisin Cookie",
-        "description": "A soft and chewy cookie made with oats and sweet raisins.",
-        "price": 80,
-        "stock": "Y",
-        "holiday": "Y"
-    },
-    {
-        "name": "Chocolate Brownie",
-        "description": "A rich and fudgy chocolate brownie with a crispy top.",
-        "price": 120,
-        "stock": "Y",
-        "holiday": "N"
-    },
-    {
-        "name": "Blueberry Muffin",
-        "description": "A moist and fluffy muffin loaded with juicy blueberries.",
-        "price": 100,
-        "stock": "N",
-        "holiday": "Y"
-    },
-    {
-        "name": "Cheesecake",
-        "description": "A creamy and smooth cheesecake with a buttery biscuit base.",
-        "price": 200,
-        "stock": "Y",
-        "holiday": "Y"
-    }
+  {
+    "name": "Pale Di Potato",
+    "price": "229",
+    "description": "Crispy Fried Potato Wedges with skin marinated in flavourful spices",
+    "stock": "Y",
+    "holidays": "Y"
+  },
+  {
+    "name": "Sourdough Herbs Garlic Bread",
+    "price": "199",
+    "description": "Artisanal sourdough, naturally fermented for a rich tangy flavor, baked crispy with garlic butter and aromatic herbs.",
+    "stock": "Y",
+    "holidays": "N"
+  },
+  {
+    "name": "Sourdough Bruschetta",
+    "price": "239",
+    "description": "Artisanal sourdough, baked crispy, brushed with garlic, freshly chopped tomatoes, olive oil and herbs.",
+    "stock": "Y",
+    "holidays": "Y"
+  },
+  {
+    "name": "Lemon Butter Ravioli",
+    "price": "379",
+    "description": "Handmade ravioli drizzled with a rich lemon butter sauce.",
+    "stock": "N",
+    "holidays": "Y"
+  },
+  {
+    "name": "Pan Fried Noodle",
+    "price": "329",
+    "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
+    "stock": "Y",
+    "holidays": "Y"
+  },
+  {
+    "name": "Chocochip Cookie with Vanilla Ice Cream",
+    "price": "179",
+    "description": "Cocoa rich large cookie baked warm and served with Vanilla Ice Cream.",
+    "stock": "Y",
+    "holidays": "Y"
+  },
+  {
+    "name": "Oatmeal cookie with Vanilla Ice Cream",
+    "price": "179",
+    "description": "Chewy and wholesome oatmeal cookie. A perfect blend of warmth and texture.",
+    "stock": "Y",
+    "holidays": "Y"
+  },
+  {
+    "name": "Creme Caramel",
+    "price": "209",
+    "description": "Silky smooth caramel custard with a rich, golden caramel glaze. A perfect balance of sweetness and creaminess.",
+    "stock": "Y",
+    "holidays": "Y"
+  }
 ]
