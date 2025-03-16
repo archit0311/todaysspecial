@@ -11,7 +11,7 @@
     "price": "199",
     "description": "Artisanal sourdough, naturally fermented for a rich tangy flavor, baked crispy with garlic butter and aromatic herbs.",
     "stock": "Y",
-    "holidays": "N"
+    "holidays": "y"
   },
   {
     "name": "Sourdough Bruschetta",
