@@ -24,7 +24,7 @@
     "name": "Lemon Butter Ravioli",
     "price": "379",
     "description": "Handmade ravioli drizzled with a rich lemon butter sauce.",
-    "stock": "N",
+    "stock": "y",
     "holidays": "Y"
   },
   {
