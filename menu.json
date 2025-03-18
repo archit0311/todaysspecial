@@ -41,6 +41,13 @@
     "stock": "Y",
     "holidays": "Y"
   },
+   {
+    "name": "Oatmeal Cookie with Vanilla Ice Cream",
+    "price": "179",
+    "description": "Chewy Large Oatmeal cookie baked warm and served with Vanilla Ice Cream.",
+    "stock": "Y",
+    "holidays": "Y"
+  },
   {
     "name": "Creme Caramel",
     "price": "209",
