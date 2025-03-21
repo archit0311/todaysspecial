@@ -1,9 +1,9 @@
 [
   {
-    "name": "Pale Di Potato",
-    "price": "169",
-    "description": "Crispy Fried Potato Wedges with skin marinated in flavourful spices",
-    "stock": "N",
+    "name": "Cream cheese garlic bread",
+    "price": "199",
+    "description": "Crispy Garlic bread and generous cream cheese",
+    "stock": "Y",
     "holidays": "Y"
   },
   {
