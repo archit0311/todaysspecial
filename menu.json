@@ -7,6 +7,13 @@
     "holidays": "Y"
   },
   {
+    "name": "Jalapeno Poppers (6pieces)",
+    "price": "249",
+    "description": "Cheesy Poppers loaded with melting cheese",
+    "stock": "Y",
+    "holidays": "Y"
+  },  
+  {
     "name": "Sourdough Herbs Garlic Bread",
     "price": "199",
     "description": "Artisanal sourdough, naturally fermented for a rich tangy flavor, baked crispy with garlic butter and aromatic herbs.",
