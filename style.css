@@ -1,68 +1,132 @@
+/* Google Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Dancing+Script:wght@400;700&family=Luxurious+Script&display=swap');
+
+
+
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAF8F5;
     text-align: center;
     padding: 20px;
+    margin: 0;
 }
-.menu {
-    max-width: 600px;
+
+/* Header Section */
+.header {
+    max-width: 800px;
     margin: auto;
-    text-align: left;
+    padding: 20px 0;
 }
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2E7D32;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 24px;
+    color: #555;
+    font-family: 'Dancing Script', cursive;
+    margin: 5px 0 20px;
+}
+
+/* Brand Name: Bold & Elegant */
+.brand-name {
+    font-family: 'Playfair Display', serif; /* Or 'Playfair Display' if you prefer */
+    font-size: 52px;
+    font-weight: 600;
+    color: #1A1A1A;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+/* Menu Title: Luxurious Flow */
+.menu-title {
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Luxurious Script', cursive;
+    color: #C4A45F; /* Subtle Gold */
+    margin-top: -8px;
+}
+
+/* Menu Styling */
+.menu {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headers */
+/* Headers */
+/* Headers */
 h1 {
     color: #2E7D32;
     text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    max-width: 800px; /* Match .menu width */
+    width: 100%; /* Ensures it doesn't exceed max-width */
+    margin-left: auto;
+    margin-right: auto; /* Centers it properly */
 }
+
+
+
+/* Menu Items */
 .menu-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    transition: transform 0.2s ease-in-out;
 }
+
+.menu-item:hover {
+    background: #f1f8e9;
+    transform: scale(1.02);
+    border-radius: 5px;
+}
+
+.menu-item div {
+    flex: 1;
+    text-align: left;
+}
+
 .menu-item h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
+    color: #333;
 }
+
+/* Description Styling */
 .description {
     font-size: 14px;
     color: #666;
+    text-align: left;
 }
+
+/* Price Styling */
 .price {
     font-weight: bold;
+    font-size: 18px;
+    color: #2E7D32;
 }
 
-.topping-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.topping-item .price {
-    font-weight: bold;
-}
+/* Topping Section */
 .topping-container {
-    max-width: 600px; /* Match the width of other menu sections */
-    margin: auto; /* Center the section */
-
-}
-
-.topping-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.topping-item {
-    display: flex;
-    justify-content: space-between;
-    width: 48%; /* Ensures two items per row */
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    box-sizing: border-box;
-    
-}
-
-.topping-container h1 {
-    color: black !important;
-}
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 15px;
