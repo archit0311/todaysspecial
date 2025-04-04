@@ -63,6 +63,36 @@
             background: #fafafa;
         }
     </style>
+
+<style>
+    .menu-button {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2E7D32;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .menu-button:hover {
+        background-color: #a2f594a7;
+    }
+</style>
+
+
+
+
+
 </head>
 <body>
     <div class="container">
@@ -121,5 +151,8 @@
         
         fetchMenu();
     </script>
+
+<a href="https://oliveandbrew.in/menu.html" class="menu-button"> Full Menu</a>
+
 </body>
 </html>
