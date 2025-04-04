@@ -1,8 +1,6 @@
 /* Google Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Dancing+Script:wght@400;700&family=Luxurious+Script&display=swap');
 
-
-
 /* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
@@ -14,9 +12,15 @@ body {
 
 /* Header Section */
 .header {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px 0;
+    white-space: nowrap; /* Prevents wrapping of brand name */
+    overflow: visible; /* Ensures text remains fully visible */
+    display: flex;
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically if needed */
+    width: 100%; /* Ensures it takes full width */
+    font-size: clamp(16px, 4vw, 24px); /* Adjusts size responsively for better fit on mobile */
+    text-align: center; /* Centers text */
+    background-color: transparent !important; /* Removes background color */
 }
 
 .header h1 {
@@ -36,13 +40,11 @@ body {
 /* Brand Name: Bold & Elegant */
 .brand-name {
     font-family: 'Playfair Display', serif; /* Or 'Playfair Display' if you prefer */
-    font-size: 52px;
     font-weight: 600;
     color: #1A1A1A;
     letter-spacing: 1.5px;
-    text-transform: uppercase;
+    /* text-transform:; */
 }
-
 
 /* Menu Title: Luxurious Flow */
 .menu-title {
@@ -65,8 +67,6 @@ body {
 }
 
 /* Headers */
-/* Headers */
-/* Headers */
 h1 {
     color: #2E7D32;
     text-align: center;
@@ -75,22 +75,46 @@ h1 {
     padding: 10px;
     border-radius: 8px;
     background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-    max-width: 800px; /* Match .menu width */
-    width: 100%; /* Ensures it doesn't exceed max-width */
+    max-width: 800px; /* Keeps it aligned with the menu */
     margin-left: auto;
     margin-right: auto; /* Centers it properly */
+    position: relative; /* Ensures stacking works properly */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
+/* When headers become sticky */
+h1.sticky {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%); /* Ensures centering */
+    width: 800px; /* Matches the max-width */
+    z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for visibility */
+}
+
+/* Stacked headers should have a slight offset */
+h1.stacked {
+    top: 0px;
+}
 
 
 /* Menu Items */
 .menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
+    display: flex;  /* Enables flexbox */
+    justify-content: space-between; /* Pushes items to opposite ends */
+    align-items: center; /* Aligns items vertically */
+    gap: 10px; /* Adds spacing between elements */
+    padding: 5px;
     border-bottom: 1px solid #ddd;
     transition: transform 0.2s ease-in-out;
+    cursor: pointer; /* Indicates interactivity */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Optional: Separates menu items */
+}
+
+.menu-item.active .description {
+    display: block; /* Shows description when the menu item is clicked */
 }
 
 .menu-item:hover {
@@ -115,6 +139,7 @@ h1 {
     font-size: 14px;
     color: #666;
     text-align: left;
+    display: none;
 }
 
 /* Price Styling */
@@ -122,6 +147,7 @@ h1 {
     font-weight: bold;
     font-size: 18px;
     color: #2E7D32;
+    white-space: nowrap; /* Prevents wrapping */
 }
 
 /* Topping Section */
@@ -130,3 +156,39 @@ h1 {
     margin: auto;
     background: white;
     padding: 15px;
+}
+
+/* Responsive Header Styling */
+@media (max-width: 768px) {
+    .header {
+        font-size: 5vw; /* Adjusts dynamically based on screen width */
+    }
+}
+
+
+    .menu-button {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2E7D32;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .menu-button:hover {
+        background-color: #a2f594a7;
+    }
+
+    .menu-container {
+        position: relative;
+    }
