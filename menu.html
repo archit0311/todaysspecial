@@ -10,6 +10,76 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll(".menu-item");
+    let lastClicked = null;
+    let secondLastClicked = null;
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function () {
+            const description = this.querySelector(".description");
+
+            if (description) {
+                // Hide all descriptions except last and second last clicked
+                menuItems.forEach(menu => {
+                    const desc = menu.querySelector(".description");
+                    if (desc && menu !== this && menu !== lastClicked) {
+                        desc.style.display = "none";
+                    }
+                });
+
+                // Toggle the clicked item's description
+                description.style.display = description.style.display === "block" ? "none" : "block";
+
+                // Update tracking variables
+                secondLastClicked = lastClicked;
+                lastClicked = this;
+            }
+        });
+    });
+});
+
+// stacking js
+// document.addEventListener("DOMContentLoaded", function () {
+//     const headers = document.querySelectorAll("h1");
+//     const menuSections = document.querySelectorAll(".menu");
+
+//     let stackedHeaders = [];
+
+//     window.addEventListener("scroll", function () {
+//         headers.forEach((header, index) => {
+//             const rect = header.getBoundingClientRect();
+
+//             if (rect.top <= 0 && !stackedHeaders.includes(header)) {
+//                 stackedHeaders.push(header);
+//                 header.classList.add("sticky", "stacked");
+
+//                 let newTop = (stackedHeaders.length - 1) * 50;
+//                 header.style.top = `${newTop}px`;
+//             }
+//         });
+
+//         if (stackedHeaders.length > 3) {
+//             let removed = stackedHeaders.shift();
+//             removed.classList.remove("sticky", "stacked");
+//             removed.style.top = ""; // Reset position
+//         }
+//     });
+
+//     headers.forEach((header, index) => {
+//         header.addEventListener("click", function () {
+//             stackedHeaders = [];
+//             headers.forEach(h => h.classList.remove("sticky", "stacked"));
+//             menuSections[index].scrollIntoView({ behavior: "smooth" });
+//         });
+//     });
+// });
+
+
+</script>
+
 </head>
 <div class="header">
     <h1>
@@ -19,7 +89,9 @@
 </div>
 
     
-    
+<div class="menu-container">
+
+
 
     <h1>Soups</h1>
     <div class="menu">
@@ -875,3 +947,5 @@
         <span class="price">439</span>
     </div>
 </div>
+</div>
+<a href="https://oliveandbrew.in/tsp.html" class="menu-button"> View Today's Special Menu</a>
