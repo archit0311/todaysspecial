@@ -3,7 +3,7 @@
     "name": "Cream of Tomato Basil Soup",
     "price": "209",
     "description": "Classic Tomato Soup with fresh basil & cream",
-    "stock": "Y",
+    "stock": "n",
     "holidays": "Y"
   },
 
