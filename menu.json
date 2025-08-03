@@ -35,6 +35,14 @@
     "stock": "y",
     "holidays": "Y"
   },
+{
+    "name": "Falafel pockets (2 pieces )",
+    "price": "229",
+    "description": "Falafel bits served in warm pita pockets with hummus and pickles.",
+    "stock": "y",
+    "holidays": "Y"
+  },
+
   {
     "name": "Velouté Lemon Ravioli",
     "price": "379",
