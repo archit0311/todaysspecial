@@ -47,14 +47,14 @@
     "name": "Velouté Lemon Ravioli",
     "price": "379",
     "description": "Handmade ravioli drizzled with a rich lemon butter sauce.",
-    "stock": "n",
+    "stock": "y",
     "holidays": "Y"
   },
   {
     "name": "Pan Fried Noodles",
     "price": "329",
     "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
-    "stock": "n",
+    "stock": "y",
     "holidays": "Y"
   },
   {
