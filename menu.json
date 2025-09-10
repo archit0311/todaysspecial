@@ -54,12 +54,12 @@
     "name": "Pan Fried Noodles",
     "price": "329",
     "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
-    "stock": "n",
+    "stock": "y",
     "holidays": "Y"
   },
 {
     "name": "Nutty Butter Vanila Shake",
-    "price": "189",
+    "price": "209",
     "description": "Creamy vanila & nutty brown butter blended to luxury.",
     "stock": "y",
     "holidays": "Y"
