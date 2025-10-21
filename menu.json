@@ -1,9 +1,9 @@
 [
   {
-    "name": "Cream of Tomato Basil Soup",
-    "price": "209",
-    "description": "Classic Tomato Soup with fresh basil & cream",
-    "stock": "n",
+    "name": "Broccoli cheddar soup",
+    "price": "249",
+    "description": "Silky ans cheesy soup made from sharp cheddar and broccoli",
+    "stock": "Y",
     "holidays": "Y"
   },
 
@@ -54,7 +54,7 @@
     "name": "Pan Fried Noodles",
     "price": "329",
     "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
-    "stock": "y",
+    "stock": "n",
     "holidays": "Y"
   },
 {
