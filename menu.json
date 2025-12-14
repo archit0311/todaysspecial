@@ -64,6 +64,15 @@
     "stock": "y",
     "holidays": "Y"
   },
+{
+    "name": "Baklava Shake",
+    "price": "279",
+    "description": "Creamy pistachio shake with crunchy baklava crumbs",
+    "stock": "y",
+    "holidays": "Y"
+  },
+
+
   {
     "name": "Chocochip Cookie with Vanilla Ice Cream",
     "price": "179",
