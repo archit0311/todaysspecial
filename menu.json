@@ -3,7 +3,7 @@
     "name": "Broccoli cheddar soup",
     "price": "249",
     "description": "Silky ans cheesy soup made from sharp cheddar and broccoli",
-    "stock": "Y",
+    "stock": "n",
     "holidays": "Y"
   },
 
@@ -47,7 +47,7 @@
     "name": "Velouté Lemon Ravioli",
     "price": "379",
     "description": "Handmade ravioli drizzled with a rich lemon butter sauce.",
-    "stock": "y",
+    "stock": "n",
     "holidays": "Y"
   },
   {
