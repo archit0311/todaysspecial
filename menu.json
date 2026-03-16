@@ -9,7 +9,7 @@
 
 {
     "name": "Cream cheese garlic bread",
-    "price": "199",
+    "price": "219",
     "description": "Crispy Garlic bread and generous cream cheese",
     "stock": "Y",
     "holidays": "Y"
@@ -54,7 +54,7 @@
     "name": "Pan Fried Noodles",
     "price": "329",
     "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
-    "stock": "Y",
+    "stock": "n",
     "holidays": "Y"
   },
 {
