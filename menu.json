@@ -11,7 +11,7 @@
     "name": "Cream cheese garlic bread",
     "price": "219",
     "description": "Crispy Garlic bread and generous cream cheese",
-    "stock": "Y",
+    "stock": "n",
     "holidays": "Y"
   },
   {
@@ -68,7 +68,7 @@
     "name": "Pistachio Shake",
     "price": "279",
     "description": "Creamy & silky pistachio shake",
-    "stock": "y",
+    "stock": "n",
     "holidays": "Y"
   },
 
@@ -84,8 +84,8 @@
     "name": "Oatmeal Cookie with Vanilla Ice Cream",
     "price": "179",
     "description": "Chewy Large Oatmeal cookie baked warm and served with Vanilla Ice Cream.",
-    "stock": "Y",
-    "holidays": "Y"
+    "stock": "n",
+    "holidays": "n"
   },
   {
     "name": "Creme Caramel",
