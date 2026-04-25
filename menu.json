@@ -68,7 +68,7 @@
     "name": "Biscoff Shake",
     "price": "279",
     "description": "Creamy & silky biscoff shake",
-    "stock": "n",
+    "stock": "y",
     "holidays": "Y"
   },
 
@@ -77,7 +77,7 @@
     "name": "Chocochip Cookie with Vanilla Ice Cream",
     "price": "179",
     "description": "Cocoa rich large cookie baked warm and served with Vanilla Ice Cream.",
-    "stock": "y",
+    "stock": "n",
     "holidays": "Y"
   },
    {
