@@ -1,0 +1,1334 @@
+{
+  "Menu": [
+    {
+      "Category": "Soups",
+      "Items": [
+        {
+          "Id": "SOUP_001",
+          "Name": "Lemon Cilantro",
+          "Description": "Broth with aroma of lemon and coriander.",
+          "Price": 249,
+          "Tags": ["broth", "citrusy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "SOUP_002",
+          "Name": "Munchow",
+          "Description": "Mild spicy preparation with vegetables & umami flavours.",
+          "Price": 249,
+          "Tags": ["spicy", "umami"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "SOUP_003",
+          "Name": "Spinach Cream",
+          "Description": "Spinach puree tempered with garlic & cream.",
+          "Price": 249,
+          "Tags": ["creamy"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "SOUP_004",
+          "Name": "Almond Broccoli",
+          "Description": "Broccoli soup with cream and almonds.",
+          "Price": 279,
+          "Tags": ["creamy", "nutty"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "SOUP_005",
+          "Name": "Truffle Mushroom",
+          "Description": "Mushroom veloute with truffle finish.",
+          "Price": 319,
+          "Tags": ["umami"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "SOUP_006",
+          "Name": "Burmese Khao Suey",
+          "Description": "Coconut soup with herbs and chilli oil.",
+          "Price": 309,
+          "Tags": ["spicy", "coconut"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    
+    {
+      "Category": "Sides",
+      "Items": [
+        {
+          "Id": "SIDE_001",
+          "Name": "Salt & Pepper Fries",
+          "Description": "Crispy fries seasoned with salt and pepper.",
+          "Price": 209,
+          "Tags": [
+            "crispy"
+          ],
+          "Customizable": {
+            "Jain": false,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_002",
+          "Name": "Peri Peri Fries",
+          "Description": "Fries tossed in peri peri spice.",
+          "Price": 229,
+          "Tags": [
+            "spicy"
+          ],
+          "Customizable": {
+            "Jain": false,
+            "Swaminarayan": false
+          }
+        },
+        {
+          "Id": "SIDE_003",
+          "Name": "Tandoori Fries",
+          "Description": "Fries with tandoori seasoning.",
+          "Price": 229,
+          "Tags": [
+            "smoky"
+          ],
+          "Customizable": {
+            "Jain": false,
+            "Swaminarayan": false
+          }
+        },
+        {
+          "Id": "SIDE_004",
+          "Name": "Lemon Mint Fries",
+          "Description": "Fries flavoured with lemon and mint.",
+          "Price": 229,
+          "Tags": [
+            "refreshing"
+          ],
+          "Customizable": {
+            "Jain": false,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_005",
+          "Name": "Nachos with Salsa & Cheese",
+          "Description": "Nachos with salsa and cheese.",
+          "Price": 209,
+          "Tags": [
+            "cheesy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_006",
+          "Name": "Nachos with Refried Beans & Cheese",
+          "Description": "Nachos with beans and cheese.",
+          "Price": 249,
+          "Tags": [
+            "cheesy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_007",
+          "Name": "Cheese Corn Balls",
+          "Description": "Fried cheese and corn balls.",
+          "Price": 289,
+          "Tags": [
+            "crispy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Crostini",
+      "Items": [
+        {
+          "Id": "CROSTINI_001",
+          "Name": "Garlic Bread",
+          "Description": "Classic toasted bread with garlic butter.",
+          "Price": 159,
+          "Tags": ["classic"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_002",
+          "Name": "Cheese Garlic Bread",
+          "Description": "Garlic bread topped with melted cheese.",
+          "Price": 229,
+          "Tags": ["cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_003",
+          "Name": "Chilli Cheese Garlic Bread",
+          "Description": "Cheesy garlic bread with a sharp kick of green chilli.",
+          "Price": 239,
+          "Tags": ["spicy", "cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_004",
+          "Name": "Exotic Garlic Bread",
+          "Description": "Cheese garlic bread topped with corn, onions, bell peppers, jalapeno and olives.",
+          "Price": 259,
+          "Tags": ["loaded", "cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_005",
+          "Name": "Masala Garlic Bread",
+          "Description": "Giant stuffed bread with marinated onions, peppers and cheese.",
+          "Price": 319,
+          "Tags": ["spicy", "loaded"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_006",
+          "Name": "Bruschetta Al Pomodoro",
+          "Description": "Toasted farmer’s bread with garlic, finely chopped tomatoes, olive oil and herbs.",
+          "Price": 289,
+          "Tags": ["classic", "fresh"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_007",
+          "Name": "Mozzarella Bruschetta",
+          "Description": "Classic bruschetta topped with melted mozzarella.",
+          "Price": 319,
+          "Tags": ["cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_008",
+          "Name": "Cream Cheese Garlic Bread",
+          "Description": "Crispy garlic bread layered with creamy cheese spread.",
+          "Price": 259,
+          "Tags": ["creamy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+        
+      {
+        "Category": "Salads",
+        "Items": [
+          {
+            "Id": "SALAD_001",
+            "Name": "Caesar Salad",
+            "Description": "Iceberg lettuce, herbed croutons, tossed in a creamy dressing with Dijon mustard, parmesan and cracked black pepper.",
+            "Price": 319,
+            "Tags": ["creamy", "classic"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          },
+          {
+            "Id": "SALAD_002",
+            "Name": "Tandoori Paneer Salad",
+            "Description": "Iceberg lettuce with marinated tandoori paneer, onions, capsicum, olives, tomatoes and gherkins.",
+            "Price": 349,
+            "Tags": ["spicy", "indian"],
+            "Customizable": { "Jain": false, "Swaminarayan": false }
+          }
+        ]
+      },
+      {
+        "Category": "Exotic Vegetables",
+        "Description": "Broccoli, baby corn, beans, bell peppers, zucchini and carrots — tossed in your choice of preparation.",
+        "Items": [
+          {
+            "Id": "VEG_001",
+            "Name": "Chinese Stir Fry",
+            "Description": "Umami-rich vegetables tossed in Indo-Chinese style.",
+            "Price": 299,
+            "Tags": ["umami"],
+            "Customizable": { "Jain": false, "Swaminarayan": false }
+          },
+          {
+            "Id": "VEG_002",
+            "Name": "Sauted Vegetables",
+            "Description": "Delicately tossed in olive oil with Italian herbs.",
+            "Price": 329,
+            "Tags": ["herbed", "light"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          },
+          {
+            "Id": "VEG_003",
+            "Name": "Black Pepper",
+            "Description": "Vegetables coated in bold black pepper sauce.",
+            "Price": 299,
+            "Tags": ["spicy"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          },
+          {
+            "Id": "VEG_004",
+            "Name": "Olive & Brew Exotica",
+            "Description": "Signature chilli pepper sauce with a spicy finish.",
+            "Price": 299,
+            "Tags": ["spicy", "signature"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          }
+        ]
+      },
+
+      {
+    "Category": "Starters - Italian",
+    "Items": [
+      {
+        "Id": "START_IT_001",
+        "Name": "Saute Mushroom",
+        "Description": "Fresh mushrooms seared and tossed with garlic and herbs.",
+        "Price": 369,
+        "Tags": ["herbed", "umami"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "START_IT_002",
+        "Name": "Spicy Herbs Cottage Cheese",
+        "Description": "Semi-crisp paneer and vegetables tossed in spicy marinara sauce and finished with herbs.",
+        "Price": 359,
+        "Tags": ["spicy", "saucy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_IT_003",
+        "Name": "Lemon Butter Mushroom",
+        "Description": "Fresh mushrooms seared with garlic, butter and a dash of lemon.",
+        "Price": 359,
+        "Tags": ["buttery", "tangy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      }
+    ]
+  },
+
+  {
+    "Category": "Starters - Mexican",
+    "Items": [
+      {
+        "Id": "START_MX_001",
+        "Name": "Loaded Nachos",
+        "Description": "Nachos topped with refried beans, corn, jalapeno, olives and melted cheese, served with salsa.",
+        "Price": 319,
+        "Tags": ["cheesy", "loaded"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_MX_002",
+        "Name": "Quesadilla",
+        "Description": "Baked tortillas folded with crumbled paneer and capsicum, mixed with Mexican spices, served with salsa and sour cream.",
+        "Price": 309,
+        "Tags": ["cheesy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_MX_003",
+        "Name": "Tex Mex Tacos",
+        "Description": "Taco shells filled with beans, vegetables, salsa and melted cheese.",
+        "Price": 259,
+        "Tags": ["loaded"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      }
+    ]
+  },
+
+{
+    "Category": "Soulful Comforts",
+    "Items": [
+      {
+        "Id": "START_SC_001",
+        "Name": "Manchurian",
+        "Description": "Bold, saucy and flavourful preparation.",
+        "Price": 259,
+        "Tags": ["saucy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_SC_002",
+        "Name": "Manchurian 65",
+        "Description": "Fusion of Indian and Chinese sauces.",
+        "Price": 269,
+        "Tags": ["fusion", "spicy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "START_SC_003",
+        "Name": "Spring Rolls",
+        "Description": "Crispy rolls served with a fiery dip.",
+        "Price": 279,
+        "Tags": ["crispy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "START_SC_004",
+        "Name": "Paneer Chilly",
+        "Description": "Spicy, tangy and saucy paneer.",
+        "Price": 329,
+        "Tags": ["spicy", "saucy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_SC_005",
+        "Name": "Paneer 65",
+        "Description": "Fusion of Indian and Chinese sauces.",
+        "Price": 349,
+        "Tags": ["fusion", "spicy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "START_SC_006",
+        "Name": "Mushroom Chilly",
+        "Description": "Spicy, tangy and crispy mushrooms.",
+        "Price": 289,
+        "Tags": ["spicy", "crispy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_SC_007",
+        "Name": "Schezwan Marbles",
+        "Description": "Cheese balls tossed in a spicy schezwan sauce.",
+        "Price": 319,
+        "Tags": ["spicy", "cheesy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      }
+    ]
+  },
+  {
+    "Category": "Modern Plates",
+    "Items": [
+      {
+        "Id": "START_MP_001",
+        "Name": "Kung Pao Paneer",
+        "Description": "Paneer stir-fried in a spicy, fragrant sauce.",
+        "Price": 379,
+        "Tags": ["spicy", "indo-chinese"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "START_MP_002",
+        "Name": "Hunan Garlic Paneer",
+        "Description": "Crispy paneer tossed in a fiery, garlicky sauce.",
+        "Price": 379,
+        "Tags": ["spicy", "garlicky"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "START_MP_003",
+        "Name": "Junglee Paneer",
+        "Description": "Paneer and vegetables topped with crispy fried coriander.",
+        "Price": 369,
+        "Tags": ["herbed"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_MP_004",
+        "Name": "Crackling Paneer",
+        "Description": "Mild spicy paneer cubes topped with garlic and crispy greens.",
+        "Price": 369,
+        "Tags": ["crispy", "mild"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "START_MP_005",
+        "Name": "Korean Chilli Lotus Stems",
+        "Description": "Crispy lotus stems tossed in a sweet and spicy Korean sauce.",
+        "Price": 359,
+        "Tags": ["spicy", "sweet"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      }
+    ]
+  },
+
+  {
+    "Category": "Baked Dishes - Italian",
+    "Items": [
+      {
+        "Id": "BAKE_IT_001",
+        "Name": "Mac N Cheese",
+        "Description": "Creamy, cheesy macaroni with pineapple baked to golden perfection.",
+        "Price": 429,
+        "Tags": ["creamy", "cheesy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "BAKE_IT_002",
+        "Name": "Lasagne",
+        "Description": "House-made pasta layered with béchamel sauce, marinara, mozzarella and vegetables, baked and served saucy.",
+        "Price": 489,
+        "Tags": ["baked", "cheesy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      }
+    ]
+  },
+
+  {
+    "Category": "Baked Dishes - Mexican",
+    "Items": [
+      {
+        "Id": "BAKE_MX_001",
+        "Name": "Black Bean Enchiladas",
+        "Description": "Black beans, sweet corn and peppers rolled in tortillas, baked with zesty tomato sauce, Mexican seasonings and melted cheese.",
+        "Price": 429,
+        "Tags": ["cheesy", "spicy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      }
+    ]
+  },
+
+  {
+    "Category": "Fondue",
+    "Items": [
+      {
+        "Id": "FONDUE_001",
+        "Name": "Swiss Fondue",
+        "Description": "Traditional cheese fondue served hot with vegetables (broccoli, baby corn, carrot, zucchini, capsicum) and herbed croutons.",
+        "Price": 429,
+        "Tags": ["cheesy", "classic"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "FONDUE_002",
+        "Name": "Pav Bhaji Fondue",
+        "Description": "Classic bhaji blended with melted cheese, served in a fondue pot with buttered bread croutons.",
+        "Price": 449,
+        "Tags": ["fusion", "spicy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "FONDUE_003",
+        "Name": "Tex Mex Fondue",
+        "Description": "Cheese fondue infused with Mexican beans, served hot with vegetables and herbed croutons.",
+        "Price": 439,
+        "Tags": ["fusion", "cheesy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      }
+    ]
+  },
+
+
+  {
+  "Category": "Pizza",
+  "Subcategories": [
+    {
+      "Name": "All About Cheese",
+      "Items": [
+        {
+          "Id": "PIZZA_001",
+          "Name": "Margherita",
+          "Description": "Fresh mozzarella, basil and pelati tomato sauce.",
+          "Variants": [
+            { "Size": "Regular", "Price": 319 },
+            { "Size": "Large", "Price": 469 }
+          ],
+          "Tags": ["classic", "cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_002",
+          "Name": "4 Cheese",
+          "Description": "Monterey Jack, mozzarella, orange cheddar and white cheddar.",
+          "Variants": [
+            { "Size": "Regular", "Price": 369 },
+            { "Size": "Large", "Price": 539 }
+          ],
+          "Tags": ["cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+    {
+      "Name": "Everyday Pizza",
+      "Items": [
+        {
+          "Id": "PIZZA_003",
+          "Name": "Nawabi",
+          "Description": "Tomato sauce with Italian herbs, topped with corn, capsicum, tomato cubes and onion.",
+          "Variants": [
+            { "Size": "Regular", "Price": 349 },
+            { "Size": "Large", "Price": 509 }
+          ],
+          "Tags": ["classic"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_004",
+          "Name": "5 Pepper",
+          "Description": "Loaded with five varieties of peppers.",
+          "Variants": [
+            { "Size": "Regular", "Price": 349 },
+            { "Size": "Large", "Price": 509 }
+          ],
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_005",
+          "Name": "Tabasco",
+          "Description": "Jalapeno, sun-dried tomatoes, tabasco sauce and mozzarella.",
+          "Variants": [
+            { "Size": "Regular", "Price": 339 },
+            { "Size": "Large", "Price": 499 }
+          ],
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_006",
+          "Name": "Fantasy",
+          "Description": "Onion, capsicum, cottage cheese, coriander and mozzarella.",
+          "Variants": [
+            { "Size": "Regular", "Price": 349 },
+            { "Size": "Large", "Price": 509 }
+          ],
+          "Tags": ["cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_007",
+          "Name": "Tandoori Paneer",
+          "Description": "Tomato sauce with Italian herbs, topped with tandoori paneer, onion, capsicum and mozzarella.",
+          "Variants": [
+            { "Size": "Regular", "Price": 359 },
+            { "Size": "Large", "Price": 519 }
+          ],
+          "Tags": ["spicy", "indian"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+    {
+      "Name": "Signature Pizza",
+      "Items": [
+        {
+          "Id": "PIZZA_008",
+          "Name": "Nepoli",
+          "Description": "Onion, capsicum, sun-dried tomatoes, jalapeno, peppers and chilli oil.",
+          "Variants": [
+            { "Size": "Regular", "Price": 359 },
+            { "Size": "Large", "Price": 539 }
+          ],
+          "Tags": ["spicy", "gourmet"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_009",
+          "Name": "Sicilia",
+          "Description": "Mushrooms, garlic, pickled onions, sun-dried tomatoes, chilli oil and fresh basil.",
+          "Variants": [
+            { "Size": "Regular", "Price": 389 },
+            { "Size": "Large", "Price": 549 }
+          ],
+          "Tags": ["umami", "gourmet"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_010",
+          "Name": "Rustic Garden",
+          "Description": "Onion, capsicum and mashed cottage cheese marinated with chilli oil.",
+          "Variants": [
+            { "Size": "Regular", "Price": 359 },
+            { "Size": "Large", "Price": 539 }
+          ],
+          "Tags": ["gourmet"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_011",
+          "Name": "Julio Robert",
+          "Description": "Onion, capsicum, sun-dried tomatoes, jalapeno, olives marinated with chilli oil and topped with coriander.",
+          "Variants": [
+            { "Size": "Regular", "Price": 399 },
+            { "Size": "Large", "Price": 569 }
+          ],
+          "Tags": ["gourmet", "spicy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PIZZA_012",
+          "Name": "Munja Pizza",
+          "Description": "Broccoli, spinach, zucchini, peppers and fried onions.",
+          "Variants": [
+            { "Size": "Regular", "Price": 419 },
+            { "Size": "Large", "Price": 589 }
+          ],
+          "Tags": ["loaded"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    }
+  ]
+},
+
+
+    {
+  "Category": "Pasta",
+  "Subcategories": [
+    {
+      "Name": "Classic",
+      "Items": [
+        {
+          "Id": "PASTA_001",
+          "Name": "Aglio Olio E Peperoncino",
+          "Description": "A simple garlic sauce with olive oil, chilli pepper and parsley, best served with spaghetti.",
+          "Price": 349,
+          "Tags": ["classic", "garlicky"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    {
+      "Name": "White Sauce",
+      "Items": [
+        {
+          "Id": "PASTA_002",
+          "Name": "Alfredo",
+          "Description": "Rich creamy white sauce with garlic and mushrooms.",
+          "Price": 369,
+          "Tags": ["creamy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PASTA_003",
+          "Name": "Barbaresca",
+          "Description": "Creamy sauce with sun-dried tomatoes, fresh tomatoes, broccoli and chilli pepper.",
+          "Price": 389,
+          "Tags": ["creamy", "spicy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PASTA_004",
+          "Name": "Primavera (White Sauce)",
+          "Description": "Pasta with fresh exotic vegetables, garlic, herbs and cream.",
+          "Price": 399,
+          "Tags": ["creamy", "veg-loaded"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+    {
+      "Name": "Red Sauce",
+      "Items": [
+        {
+          "Id": "PASTA_005",
+          "Name": "Alla Arrabbiata",
+          "Description": "Pasta tossed in fresh tomato sauce with garlic, chilli and parsley.",
+          "Price": 389,
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PASTA_006",
+          "Name": "Alla Papeleo",
+          "Description": "Red sauce with mushrooms, sun-dried tomatoes and zucchini.",
+          "Price": 419,
+          "Tags": ["tangy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PASTA_007",
+          "Name": "Del Fattore",
+          "Description": "Chunky tomato sauce with onion, garlic, bell pepper, olives and mushrooms.",
+          "Price": 429,
+          "Tags": ["loaded"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PASTA_008",
+          "Name": "Solo De Sicilia",
+          "Description": "Fresh tomato base with garlic, pepper, olives and cheese chunks.",
+          "Price": 429,
+          "Tags": ["tangy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+    {
+      "Name": "Mix Sauce",
+      "Items": [
+        {
+          "Id": "PASTA_009",
+          "Name": "Del Barone",
+          "Description": "Combination of red and cream sauce finished with parsley.",
+          "Price": 379,
+          "Tags": ["creamy", "balanced"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PASTA_010",
+          "Name": "Primavera (Mix Sauce)",
+          "Description": "Pasta with fresh vegetables, garlic, herbs and a blend of red and cream sauce.",
+          "Price": 399,
+          "Tags": ["veg-loaded", "balanced"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+    {
+      "Name": "Exotic Sauces",
+      "Items": [
+        {
+          "Id": "PASTA_011",
+          "Name": "Pimento",
+          "Description": "Roasted bell pepper cream sauce with onions and peppers.",
+          "Price": 449,
+          "Tags": ["creamy", "smoky"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "PASTA_012",
+          "Name": "Pesto",
+          "Description": "Fresh basil pesto with a nutty, garlicky flavour.",
+          "Price": 399,
+          "Tags": ["herbed"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "PASTA_013",
+          "Name": "Truffle Chilli Oil",
+          "Description": "Smoked chilli garlic pasta finished with truffle oil.",
+          "Price": 399,
+          "Tags": ["smoky", "spicy"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    {
+      "Name": "Ravioli",
+      "Items": [
+        {
+          "Id": "PASTA_014",
+          "Name": "Ravioli",
+          "Description": "Spinach and cottage cheese filling with pepper, wrapped in fresh pasta.",
+          "Price": 419,
+          "Tags": ["stuffed", "creamy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    }
+  ]
+},
+    {
+  "Category": "Noodles",
+  "Subcategories": [
+    {
+      "Name": "Umami",
+      "Items": [
+        {
+          "Id": "NOODLE_001",
+          "Name": "Hakka",
+          "Description": "Noodles stir-fried with onion, cabbage, carrots, bell peppers and Chinese sauces.",
+          "Price": 319,
+          "Tags": ["indo-chinese"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "NOODLE_002",
+          "Name": "Burnt Garlic",
+          "Description": "Noodles tossed with burnt garlic oil and crispy garlic with vegetables.",
+          "Price": 339,
+          "Tags": ["garlicky"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    {
+      "Name": "Spicy",
+      "Items": [
+        {
+          "Id": "NOODLE_003",
+          "Name": "Schezwan",
+          "Description": "Fiery noodles tossed in in-house schezwan sauce with chilli and garlic.",
+          "Price": 339,
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "NOODLE_004",
+          "Name": "Yellow Spice",
+          "Description": "Dry wok noodles with aromatic yellow spice blend and chilli oil.",
+          "Price": 349,
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "NOODLE_005",
+          "Name": "Dragon Five Spice",
+          "Description": "Noodles with aromatic five-spice blend, offering a sweet, earthy depth and subtle licorice notes.",
+          "Price": 349,
+          "Tags": ["aromatic"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "NOODLE_006",
+          "Name": "Butter Pepper",
+          "Description": "Buttery noodles with bold black pepper, onions and bell peppers.",
+          "Price": 369,
+          "Tags": ["buttery", "peppery"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "NOODLE_007",
+          "Name": "Kung Pao",
+          "Description": "Spicy-sweet sauce with garlic, chillies and a tangy soy finish.",
+          "Price": 369,
+          "Tags": ["spicy", "sweet"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "NOODLE_008",
+          "Name": "Hunan Fire",
+          "Description": "Fiery garlic sauce with a sharp, tangy kick.",
+          "Price": 369,
+          "Tags": ["spicy", "garlicky"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    {
+      "Name": "Stone Grill",
+      "Items": [
+        {
+          "Id": "NOODLE_009",
+          "Name": "Olive & Brew Exotica",
+          "Description": "Noodles stir-fried with exotic vegetables like broccoli, baby corn, bell peppers and zucchini, finished with chilli pepper flavours.",
+          "Price": 369,
+          "Tags": ["signature"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "NOODLE_010",
+          "Name": "Black Pepper",
+          "Description": "Noodles tossed in a bold black pepper flavour.",
+          "Price": 369,
+          "Tags": ["peppery"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+    {
+      "Name": "Thai",
+      "Items": [
+        {
+          "Id": "NOODLE_011",
+          "Name": "Pad Thai",
+          "Description": "Stir-fried flat noodles tossed in a tangy sweet-sour tamarind sauce.",
+          "Price": 349,
+          "Tags": ["tangy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "NOODLE_012",
+          "Name": "Chilli Garlic",
+          "Description": "Fragrant noodles with North-East chillies, garlic and fresh basil.",
+          "Price": 319,
+          "Tags": ["spicy", "garlicky"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    }
+  ]
+},
+    
+    {
+  "Category": "Rice",
+  "Subcategories": [
+    {
+      "Name": "Umami",
+      "Items": [
+        {
+          "Id": "RICE_001",
+          "Name": "Chinese Wok Hei",
+          "Description": "Rice cooked on high heat with minimal vegetables and bold wok flavours.",
+          "Price": 329,
+          "Tags": ["indo-chinese", "smoky"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "RICE_002",
+          "Name": "Burnt Garlic",
+          "Description": "Rice stir-fried with burnt garlic oil and finished with crispy garlic.",
+          "Price": 339,
+          "Tags": ["garlicky"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "RICE_003",
+          "Name": "Dragon Five Spice",
+          "Description": "Aromatic rice with a warm spice blend offering sweet, earthy depth and subtle licorice notes.",
+          "Price": 349,
+          "Tags": ["aromatic"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "RICE_004",
+          "Name": "Hunan Fire",
+          "Description": "Rice with a sharp, pungent and spicy flavour profile.",
+          "Price": 379,
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    {
+      "Name": "Spicy",
+      "Items": [
+        {
+          "Id": "RICE_005",
+          "Name": "Schezwan",
+          "Description": "Fiery spicy rice prepared using in-house schezwan sauce.",
+          "Price": 349,
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "RICE_006",
+          "Name": "Yellow Spice",
+          "Description": "Dry wok rice with aromatic yellow spice blend and chilli oil.",
+          "Price": 349,
+          "Tags": ["spicy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "RICE_007",
+          "Name": "Korean Paneer",
+          "Description": "Rice with a combination of sweet, salty, spicy and tangy flavours.",
+          "Price": 389,
+          "Tags": ["fusion", "spicy"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    {
+      "Name": "Mexican",
+      "Items": [
+        {
+          "Id": "RICE_008",
+          "Name": "Mexican Fried Rice",
+          "Description": "Rice tossed with pinto beans and vegetables.",
+          "Price": 369,
+          "Tags": ["mexican"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "RICE_009",
+          "Name": "Mexican Burrito Bowl",
+          "Description": "Mexican rice with vegetables topped with crushed tortilla chips, salsa, sour cream and cheese sauce.",
+          "Price": 429,
+          "Tags": ["loaded", "mexican"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+
+    {
+    "Name": "Stone Grill Rice",
+    "Description": "Rice tossed with exotic vegetables and a combination of sauces and herbs.",
+    "Items": [
+      {
+        "Id": "RICE_010",
+        "Name": "Olive & Brew Exotica",
+        "Description": "Rice with flavours of different chilli peppers.",
+        "Price": 379,
+        "Tags": ["signature", "spicy"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "RICE_011",
+        "Name": "Black Pepper",
+        "Description": "Rice with bold ground black pepper flavour.",
+        "Price": 379,
+        "Tags": ["peppery"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      }
+    ]
+  },
+  {
+    "Name": "Rice With Gravy",
+    "Items": [
+      {
+        "Id": "RICE_012",
+        "Name": "Thai Green Curry with Rice",
+        "Description": "Coconut-based curry with exotic vegetables, fresh coriander and basil.",
+        "Price": 489,
+        "Tags": ["thai", "creamy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "RICE_013",
+        "Name": "Thai Red Curry with Rice",
+        "Description": "Coconut curry with Thai red chilli and vegetables.",
+        "Price": 489,
+        "Tags": ["thai", "spicy"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "RICE_014",
+        "Name": "Thai Yellow Curry with Rice",
+        "Description": "Coconut curry with turmeric, basil and vegetables.",
+        "Price": 489,
+        "Tags": ["thai", "mild"],
+        "Customizable": { "Jain": false, "Swaminarayan": false }
+      },
+      {
+        "Id": "RICE_015",
+        "Name": "Butter Garlic Rice with Gravy",
+        "Description": "Aromatic butter garlic rice served with gravy.",
+        "Price": 449,
+        "Tags": ["buttery", "comfort"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      },
+      {
+        "Id": "RICE_016",
+        "Name": "Ginger Rice with Chilli Gravy",
+        "Description": "Mild rice served with Asian-style chilli gravy.",
+        "Price": 419,
+        "Tags": ["spicy", "asian"],
+        "Customizable": { "Jain": true, "Swaminarayan": true }
+      }
+    ]
+  }
+  ]
+},
+
+{
+  "Category": "Beverages & Desserts",
+  "Subcategories": [
+    {
+      "Name": "Hot Coffee",
+      "Items": [
+        {
+          "Id": "BEV_001",
+          "Name": "Cappuccino Classic",
+          "Description": "Smooth espresso with frothy foam.",
+          "Price": 189,
+          "Tags": ["coffee"]
+        },
+        {
+          "Id": "BEV_002",
+          "Name": "Cappuccino Flavoured",
+          "Description": "Hazelnut, Irish, roasted hazelnut or vanilla.",
+          "Price": 229,
+          "Tags": ["coffee", "flavoured"]
+        },
+        {
+          "Id": "BEV_003",
+          "Name": "Cafe Latte",
+          "Description": "Espresso with more milk and less foam.",
+          "Price": 199,
+          "Tags": ["coffee"]
+        },
+        {
+          "Id": "BEV_004",
+          "Name": "Cafe Mocha",
+          "Description": "Cappuccino with chocolate flavour.",
+          "Price": 219,
+          "Tags": ["coffee", "chocolate"]
+        },
+        {
+          "Id": "BEV_005",
+          "Name": "Vanilla Affogato",
+          "Description": "Espresso poured over vanilla ice cream.",
+          "Price": 159,
+          "Tags": ["coffee", "dessert"]
+        }
+      ]
+    },
+    {
+      "Name": "Cold Coffee",
+      "Items": [
+        {
+          "Id": "BEV_006",
+          "Name": "Cold Coffee",
+          "Price": 249,
+          "Tags": ["coffee"]
+        },
+        {
+          "Id": "BEV_007",
+          "Name": "Vietnamese Iced Coffee",
+          "Price": 229,
+          "Tags": ["coffee"]
+        },
+        {
+          "Id": "BEV_008",
+          "Name": "Salted Caramel Iced Latte",
+          "Price": 219,
+          "Tags": ["coffee", "caramel"]
+        },
+        {
+          "Id": "BEV_009",
+          "Name": "Irish Frappe",
+          "Price": 259,
+          "Tags": ["coffee"]
+        },
+        {
+          "Id": "BEV_010",
+          "Name": "Hazelnut Frappe",
+          "Price": 259,
+          "Tags": ["coffee", "nutty"]
+        },
+        {
+          "Id": "BEV_011",
+          "Name": "Roasted Hazelnut Frappe",
+          "Price": 279,
+          "Tags": ["coffee", "nutty"]
+        },
+        {
+          "Id": "BEV_012",
+          "Name": "Tiramisu Frappe",
+          "Price": 259,
+          "Tags": ["coffee", "dessert"]
+        }
+      ]
+    },
+    {
+      "Name": "Hot Chocolate",
+      "Items": [
+        {
+          "Id": "BEV_013",
+          "Name": "Classic French",
+          "Price": 199,
+          "Tags": ["chocolate"]
+        },
+        {
+          "Id": "BEV_014",
+          "Name": "Mocha Hot Chocolate",
+          "Description": "Hot chocolate with espresso.",
+          "Price": 219,
+          "Tags": ["chocolate", "coffee"]
+        }
+      ]
+    },
+    {
+      "Name": "Mojitos",
+      "Items": [
+        { "Id": "BEV_015", "Name": "Virgin", "Price": 199 },
+        { "Id": "BEV_016", "Name": "Blue Curacao", "Price": 209 },
+        { "Id": "BEV_017", "Name": "Green Apple", "Price": 209 },
+        { "Id": "BEV_018", "Name": "Masala Mojito", "Price": 209 },
+        { "Id": "BEV_019", "Name": "Pomegranate", "Price": 219 },
+        { "Id": "BEV_020", "Name": "Peach", "Price": 219 },
+        { "Id": "BEV_021", "Name": "Basil Orange", "Price": 239 },
+        { "Id": "BEV_022", "Name": "Cranberry", "Price": 229 }
+      ]
+    },
+    {
+      "Name": "Mocktails",
+      "Items": [
+        {
+          "Id": "BEV_023",
+          "Name": "Margarita",
+          "Description": "Tangy refreshing drink with fruit flavours.",
+          "Price": 209
+        },
+        {
+          "Id": "BEV_024",
+          "Name": "Guava Mary",
+          "Description": "Spiced guava drink with salt and chilli rim.",
+          "Price": 239
+        },
+        {
+          "Id": "BEV_025",
+          "Name": "Pina Colada",
+          "Description": "Coconut cream and pineapple blend.",
+          "Price": 269
+        },
+        {
+          "Id": "BEV_026",
+          "Name": "Liquid Mud Plant",
+          "Description": "Cookie shake topped with brownie crumbs.",
+          "Price": 269
+        },
+        {
+          "Id": "BEV_027",
+          "Name": "Red Wine Sangria",
+          "Description": "Red wine flavour with fruit juices.",
+          "Price": 259
+        },
+        {
+          "Id": "BEV_028",
+          "Name": "Arizona Sunrise",
+          "Description": "Tropical blend of juices with cranberry.",
+          "Price": 249
+        }
+      ]
+    },
+    {
+      "Name": "Iced Tea",
+      "Items": [
+        { "Id": "BEV_029", "Name": "Lemon Ice Tea", "Price": 199 },
+        { "Id": "BEV_030", "Name": "Peach Ice Tea", "Price": 229 },
+        { "Id": "BEV_031", "Name": "Cranberry Ice Tea", "Price": 229 }
+      ]
+    },
+    {
+      "Name": "Shakes",
+      "Items": [
+        { "Id": "BEV_032", "Name": "Vanilla", "Price": 219 },
+        { "Id": "BEV_033", "Name": "Strawberry", "Price": 239 },
+        { "Id": "BEV_034", "Name": "Chocolate Hazelnut", "Price": 259 },
+        { "Id": "BEV_035", "Name": "Brownie", "Price": 259 },
+        { "Id": "BEV_036", "Name": "Biscoff", "Price": 289 },
+        { "Id": "BEV_037", "Name": "Oreo", "Price": 259 }
+      ]
+    },
+    {
+      "Name": "Desserts",
+      "Items": [
+        {
+          "Id": "DES_001",
+          "Name": "Hot Brownie with Ganache",
+          "Price": 219
+        },
+        {
+          "Id": "DES_002",
+          "Name": "Hot Brownie with Ice Cream",
+          "Price": 239
+        },
+        {
+          "Id": "DES_003",
+          "Name": "Sizzling Brownie with Ice Cream",
+          "Price": 299
+        },
+        {
+          "Id": "DES_004",
+          "Name": "Choco Lava with Ice Cream",
+          "Description": "Warm chocolate cake with vanilla ice cream.",
+          "Price": 239
+        },
+        {
+          "Id": "DES_005",
+          "Name": "Choco Chip Cookie with Ice Cream",
+          "Price": 189
+        },
+        {
+          "Id": "DES_006",
+          "Name": "Tiramisu",
+          "Description": "Coffee mascarpone dessert.",
+          "Price": 339
+        },
+        {
+          "Id": "DES_007",
+          "Name": "Cheesecake",
+          "Description": "Choice of topping: Biscoff or Blueberry.",
+          "Price": 339
+        },
+        {
+          "Id": "DES_008",
+          "Name": "Baklava with Ice Cream",
+          "Description": "Layered filo pastry with nuts served with vanilla ice cream.",
+          "Price": 359
+        }
+      ]
+    }
+  ]
+}
+  ]
+}

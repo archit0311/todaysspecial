@@ -1,0 +1,900 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Olive & Brew Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px 20px 10px;
+    }
+
+    #topBar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px;
+      background: #fafafa;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    #categoryBar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    #categoryBar::-webkit-scrollbar {
+      display: none;
+    }
+
+    #categoryBar button {
+      flex: 0 0 auto;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 20px;
+      background: #eee;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    #categoryBar button:hover {
+      background: #ddd;
+    }
+
+    #categoryBar button.active {
+      background: #000;
+      color: #fff;
+    }
+
+    #menu {
+      padding: 0 20px 20px;
+    }
+
+    .category {
+      margin-top: 40px;
+    }
+
+    .subcategory {
+      margin-top: 20px;
+      padding-left: 10px;
+    }
+
+    .item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .price {
+      float: right;
+      font-weight: bold;
+    }
+
+    .desc {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .diet {
+      margin-top: 4px;
+    }
+
+    .diet-badge {
+      display: inline-block;
+      margin-right: 6px;
+      color: green;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .notice {
+      margin: 30px 0;
+      padding: 14px;
+      background: #fff3cd;
+      border: 1px solid #ffe69c;
+      color: #664d03;
+    }
+
+    #legend {
+      margin: 40px 20px 0;
+      padding: 15px 0;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Olive & Brew Menu</h1>
+
+  <div id="topBar">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search menu..."
+    />
+
+    <div id="categoryBar"></div>
+  </div>
+
+  <div id="menu"></div>
+
+  <div id="legend">
+    <p><span class="diet-badge">J</span> Jain Friendly</p>
+    <p><span class="diet-badge">S</span> Swaminarayan Friendly</p>
+  </div>
+
+  <script type="application/json" id="menuData">
+{
+  "Menu": [
+    {
+      "Category": "Soups",
+      "Items": [
+        {
+          "Id": "SOUP_001",
+          "Name": "Lemon Cilantro",
+          "Description": "Broth with aroma of lemon and coriander.",
+          "Price": 249,
+          "Tags": ["broth", "citrusy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "SOUP_002",
+          "Name": "Munchow",
+          "Description": "Mild spicy preparation with vegetables & umami flavours.",
+          "Price": 249,
+          "Tags": ["spicy", "umami"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "SOUP_003",
+          "Name": "Spinach Cream",
+          "Description": "Spinach puree tempered with garlic & cream.",
+          "Price": 249,
+          "Tags": ["creamy"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "SOUP_004",
+          "Name": "Almond Broccoli",
+          "Description": "Broccoli soup with cream and almonds.",
+          "Price": 279,
+          "Tags": ["creamy", "nutty"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        },
+        {
+          "Id": "SOUP_005",
+          "Name": "Truffle Mushroom",
+          "Description": "Mushroom veloute with truffle finish.",
+          "Price": 319,
+          "Tags": ["umami"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "SOUP_006",
+          "Name": "Burmese Khao Suey",
+          "Description": "Coconut soup with herbs and chilli oil.",
+          "Price": 309,
+          "Tags": ["spicy", "coconut"],
+          "Customizable": { "Jain": false, "Swaminarayan": false }
+        }
+      ]
+    },
+    
+    {
+      "Category": "Sides",
+      "Items": [
+        {
+          "Id": "SIDE_001",
+          "Name": "Salt & Pepper Fries",
+          "Description": "Crispy fries seasoned with salt and pepper.",
+          "Price": 209,
+          "Tags": [
+            "crispy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_002",
+          "Name": "Peri Peri Fries",
+          "Description": "Fries tossed in peri peri spice.",
+          "Price": 229,
+          "Tags": [
+            "spicy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_003",
+          "Name": "Tandoori Fries",
+          "Description": "Fries with tandoori seasoning.",
+          "Price": 229,
+          "Tags": [
+            "smoky"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_004",
+          "Name": "Lemon Mint Fries",
+          "Description": "Fries flavoured with lemon and mint.",
+          "Price": 229,
+          "Tags": [
+            "refreshing"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_005",
+          "Name": "Nachos with Salsa & Cheese",
+          "Description": "Nachos with salsa and cheese.",
+          "Price": 209,
+          "Tags": [
+            "cheesy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_006",
+          "Name": "Nachos with Refried Beans & Cheese",
+          "Description": "Nachos with beans and cheese.",
+          "Price": 249,
+          "Tags": [
+            "cheesy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "SIDE_007",
+          "Name": "Cheese Corn Balls",
+          "Description": "Fried cheese and corn balls.",
+          "Price": 289,
+          "Tags": [
+            "crispy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Crostini",
+      "Items": [
+        {
+          "Id": "CROSTINI_001",
+          "Name": "Garlic Bread",
+          "Description": "Classic toasted bread with garlic butter.",
+          "Price": 159,
+          "Tags": ["classic"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_002",
+          "Name": "Cheese Garlic Bread",
+          "Description": "Garlic bread topped with melted cheese.",
+          "Price": 229,
+          "Tags": ["cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_003",
+          "Name": "Chilli Cheese Garlic Bread",
+          "Description": "Cheesy garlic bread with a sharp kick of green chilli.",
+          "Price": 239,
+          "Tags": ["spicy", "cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_004",
+          "Name": "Exotic Garlic Bread",
+          "Description": "Cheese garlic bread topped with corn, onions, bell peppers, jalapeno and olives.",
+          "Price": 259,
+          "Tags": ["loaded", "cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_005",
+          "Name": "Masala Garlic Bread",
+          "Description": "Giant stuffed bread with marinated onions, peppers and cheese.",
+          "Price": 319,
+          "Tags": ["spicy", "loaded"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_006",
+          "Name": "Bruschetta Al Pomodoro",
+          "Description": "Toasted farmerâ€™s bread with garlic, finely chopped tomatoes, olive oil and herbs.",
+          "Price": 289,
+          "Tags": ["classic", "fresh"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_007",
+          "Name": "Mozzarella Bruschetta",
+          "Description": "Classic bruschetta topped with melted mozzarella.",
+          "Price": 319,
+          "Tags": ["cheesy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        },
+        {
+          "Id": "CROSTINI_008",
+          "Name": "Cream Cheese Garlic Bread",
+          "Description": "Crispy garlic bread layered with creamy cheese spread.",
+          "Price": 259,
+          "Tags": ["creamy"],
+          "Customizable": { "Jain": true, "Swaminarayan": true }
+        }
+      ]
+    },
+        
+      {
+        "Category": "Salads",
+        "Items": [
+          {
+            "Id": "SALAD_001",
+            "Name": "Caesar Salad",
+            "Description": "Iceberg lettuce, herbed croutons, tossed in a creamy dressing with Dijon mustard, parmesan and cracked black pepper.",
+            "Price": 319,
+            "Tags": ["creamy", "classic"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          },
+          {
+            "Id": "SALAD_002",
+            "Name": "Tandoori Paneer Salad",
+            "Description": "Iceberg lettuce with marinated tandoori paneer, onions, capsicum, olives, tomatoes and gherkins.",
+            "Price": 349,
+            "Tags": ["spicy", "indian"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          }
+        ]
+      },
+      {
+        "Category": "Exotic Vegetables",
+        "Description": "Broccoli, baby corn, beans, bell peppers, zucchini and carrots â€” tossed in your choice of preparation.",
+        "Items": [
+          {
+            "Id": "VEG_001",
+            "Name": "Chinese Stir Fry",
+            "Description": "Umami-rich vegetables tossed in Indo-Chinese style.",
+            "Price": 299,
+            "Tags": ["umami"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          },
+          {
+            "Id": "VEG_002",
+            "Name": "SautÃ©ed Vegetables",
+            "Description": "Delicately tossed in olive oil with Italian herbs.",
+            "Price": 329,
+            "Tags": ["herbed", "light"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          },
+          {
+            "Id": "VEG_003",
+            "Name": "Black Pepper",
+            "Description": "Vegetables coated in bold black pepper sauce.",
+            "Price": 299,
+            "Tags": ["spicy"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          },
+          {
+            "Id": "VEG_004",
+            "Name": "Olive & Brew Exotica",
+            "Description": "Signature chilli pepper sauce with a spicy finish.",
+            "Price": 299,
+            "Tags": ["spicy", "signature"],
+            "Customizable": { "Jain": true, "Swaminarayan": true }
+          }
+        ]
+      },
+
+      
+    {
+      "Category": "Pizza",
+      "Items": [
+        {
+          "Id": "PIZZA_001",
+          "Name": "Margharita",
+          "Description": "Classic cheese pizza.",
+          "Variants": [
+            {
+              "Size": "Regular",
+              "Price": 319
+            },
+            {
+              "Size": "Large",
+              "Price": 469
+            }
+          ],
+          "Tags": [
+            "classic"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "PIZZA_002",
+          "Name": "4 Cheese",
+          "Description": "Four cheese blend pizza.",
+          "Variants": [
+            {
+              "Size": "Regular",
+              "Price": 369
+            },
+            {
+              "Size": "Large",
+              "Price": 539
+            }
+          ],
+          "Tags": [
+            "cheesy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Pasta",
+      "Items": [
+        {
+          "Id": "PASTA_001",
+          "Name": "Alfredo",
+          "Description": "Creamy white sauce pasta.",
+          "Price": 369,
+          "Tags": [
+            "creamy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "PASTA_002",
+          "Name": "Arrabbiata",
+          "Description": "Spicy tomato pasta.",
+          "Price": 389,
+          "Tags": [
+            "spicy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Noodles",
+      "Items": [
+        {
+          "Id": "NOODLE_001",
+          "Name": "Hakka",
+          "Description": "Classic stir fried noodles.",
+          "Price": 319,
+          "Tags": [
+            "indo-chinese"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "NOODLE_002",
+          "Name": "Schezwan",
+          "Description": "Spicy schezwan noodles.",
+          "Price": 339,
+          "Tags": [
+            "spicy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Rice",
+      "Items": [
+        {
+          "Id": "RICE_001",
+          "Name": "Schezwan Rice",
+          "Description": "Spicy schezwan rice.",
+          "Price": 349,
+          "Tags": [
+            "spicy"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        },
+        {
+          "Id": "RICE_002",
+          "Name": "Burnt Garlic Rice",
+          "Description": "Rice with burnt garlic flavour.",
+          "Price": 339,
+          "Tags": [
+            "garlicky"
+          ],
+          "Customizable": {
+            "Jain": true,
+            "Swaminarayan": true
+          }
+        }
+      ]
+    },
+    {
+      "Category": "Beverages & Desserts",
+      "Subcategories": [
+        {
+          "Name": "Mocktails",
+          "Items": [
+            {
+              "Id": "BEV_001",
+              "Name": "Margarita",
+              "Description": "Tangy refreshing mocktail.",
+              "Price": 209,
+              "Tags": [
+                "refreshing"
+              ],
+              "Customizable": {
+                "Jain": true,
+                "Swaminarayan": true
+              }
+            },
+            {
+              "Id": "BEV_002",
+              "Name": "Pina Colada",
+              "Description": "Coconut pineapple drink.",
+              "Price": 269,
+              "Tags": [
+                "tropical"
+              ],
+              "Customizable": {
+                "Jain": true,
+                "Swaminarayan": true
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Desserts",
+          "Items": [
+            {
+              "Id": "DES_001",
+              "Name": "Choco Lava with Ice Cream",
+              "Description": "Warm chocolate cake with ice cream.",
+              "Price": 239,
+              "Tags": [
+                "chocolate"
+              ],
+              "Customizable": {
+                "Jain": true,
+                "Swaminarayan": true
+              }
+            },
+            {
+              "Id": "DES_002",
+              "Name": "Tiramisu",
+              "Description": "Coffee mascarpone dessert.",
+              "Price": 339,
+              "Tags": [
+                "coffee"
+              ],
+              "Customizable": {
+                "Jain": true,
+                "Swaminarayan": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <script>
+    let fullData = [];
+    let activeCategory = "All";
+    let scrollObserver = null;
+
+    const menuContainer = document.getElementById("menu");
+    const searchInput = document.getElementById("searchInput");
+
+    function slugify(text) {
+      return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+
+    async function getMenuData() {
+      try {
+        const response = await fetch("full_menu.json");
+
+        if (!response.ok) {
+          throw new Error(`Could not load full_menu.json (${response.status})`);
+        }
+
+        return await response.json();
+      } catch (error) {
+        const embeddedData = document.getElementById("menuData").textContent.trim();
+
+        if (!embeddedData) {
+          throw error;
+        }
+
+        return JSON.parse(embeddedData);
+      }
+    }
+
+    async function loadMenu() {
+      try {
+        const data = await getMenuData();
+
+        if (!Array.isArray(data.Menu)) {
+          throw new Error('Menu data must contain a "Menu" array');
+        }
+
+        fullData = data.Menu;
+        renderCategories(fullData);
+        renderMenu(fullData);
+        setupScrollSpy();
+      } catch (error) {
+        menuContainer.innerHTML = `
+          <div class="notice">
+            Menu data could not be loaded. Please check that full_menu.json contains valid menu data.
+          </div>
+        `;
+        console.error(error);
+      }
+    }
+
+    function renderMenu(menuData) {
+      menuContainer.innerHTML = "";
+
+      menuData.forEach(category => {
+        const catDiv = document.createElement("div");
+        catDiv.className = "category";
+        catDiv.id = `category-${slugify(category.Category)}`;
+
+        const title = document.createElement("h2");
+        title.textContent = category.Category;
+        catDiv.appendChild(title);
+
+        if (category.Description) {
+          const description = document.createElement("p");
+          description.className = "desc";
+          description.textContent = category.Description;
+          catDiv.appendChild(description);
+        }
+
+        if (category.Subcategories) {
+          category.Subcategories.forEach(sub => {
+            const subDiv = document.createElement("div");
+            subDiv.className = "subcategory";
+
+            const subTitle = document.createElement("h3");
+            subTitle.textContent = sub.Name;
+            subDiv.appendChild(subTitle);
+
+            sub.Items.forEach(item => {
+              subDiv.appendChild(createItem(item));
+            });
+
+            catDiv.appendChild(subDiv);
+          });
+        }
+
+        if (category.Items) {
+          category.Items.forEach(item => {
+            catDiv.appendChild(createItem(item));
+          });
+        }
+
+        menuContainer.appendChild(catDiv);
+      });
+    }
+
+    function createItem(item) {
+      const div = document.createElement("div");
+      div.className = "item";
+
+      const name = document.createElement("div");
+      name.className = "name";
+
+      if (item.Price) {
+        name.innerHTML = `${item.Name} <span class="price">&#8377;${item.Price}</span>`;
+      } else if (item.Variants) {
+        const prices = item.Variants.map(v => `${v.Size}: &#8377;${v.Price}`).join(" | ");
+        name.innerHTML = `${item.Name} <span class="price">${prices}</span>`;
+      } else {
+        name.textContent = item.Name;
+      }
+
+      const desc = document.createElement("div");
+      desc.className = "desc";
+      desc.textContent = item.Description || "";
+
+      const diet = document.createElement("div");
+      diet.className = "diet";
+
+      let badges = "";
+
+      if (item.Customizable?.Jain) {
+        badges += '<span class="diet-badge">J</span>';
+      }
+
+      if (item.Customizable?.Swaminarayan) {
+        badges += '<span class="diet-badge">S</span>';
+      }
+
+      diet.innerHTML = badges;
+
+      div.appendChild(name);
+      div.appendChild(desc);
+      div.appendChild(diet);
+
+      return div;
+    }
+
+    function itemMatches(item, query) {
+      return item.Name.toLowerCase().includes(query) ||
+        (item.Description && item.Description.toLowerCase().includes(query)) ||
+        (item.Tags && item.Tags.some(tag => tag.toLowerCase().includes(query)));
+    }
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+
+      if (!query) {
+        activeCategory = "All";
+        renderMenu(fullData);
+        renderCategories(fullData);
+        setupScrollSpy();
+        return;
+      }
+
+      const filtered = fullData.map(category => {
+        const newCategory = { ...category };
+
+        if (category.Items) {
+          newCategory.Items = category.Items.filter(item => itemMatches(item, query));
+        }
+
+        if (category.Subcategories) {
+          newCategory.Subcategories = category.Subcategories.map(sub => {
+            const newSub = { ...sub };
+            newSub.Items = sub.Items.filter(item => itemMatches(item, query));
+            return newSub;
+          }).filter(sub => sub.Items.length > 0);
+        }
+
+        return newCategory;
+      }).filter(cat =>
+        (cat.Items && cat.Items.length > 0) ||
+        (cat.Subcategories && cat.Subcategories.length > 0)
+      );
+
+      renderMenu(filtered);
+      setupScrollSpy();
+    });
+
+    function renderCategories(menuData) {
+      const bar = document.getElementById("categoryBar");
+      bar.innerHTML = "";
+
+      const categories = ["All", ...menuData.map(c => c.Category)];
+
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.textContent = cat;
+
+        if (cat === activeCategory) {
+          btn.classList.add("active");
+        }
+
+        btn.onclick = () => {
+          activeCategory = cat;
+
+          if (cat === "All") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } else {
+            const el = document.getElementById(`category-${slugify(cat)}`);
+
+            if (el) {
+              const headerOffset = document.getElementById("topBar").offsetHeight;
+              const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+              const offsetPosition = elementPosition - headerOffset - 10;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+            }
+          }
+
+          renderCategories(fullData);
+        };
+
+        bar.appendChild(btn);
+      });
+    }
+
+    function setupScrollSpy() {
+      if (scrollObserver) {
+        scrollObserver.disconnect();
+      }
+
+      const sections = document.querySelectorAll(".category");
+
+      scrollObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              activeCategory = entry.target.querySelector("h2").textContent;
+              renderCategories(fullData);
+            }
+          });
+        },
+        {
+          rootMargin: "-100px 0px -60% 0px",
+          threshold: 0
+        }
+      );
+
+      sections.forEach(section => scrollObserver.observe(section));
+    }
+
+    loadMenu();
+  </script>
+</body>
+</html>
+
