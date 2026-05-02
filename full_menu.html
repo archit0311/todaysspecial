@@ -1,12 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Olive & Brew Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+
+    html {
+  font-size: 17px; /* was 16 or lower */
+}
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: #fafafa;
     }
 
@@ -78,24 +83,28 @@
     }
 
     .item {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-    }
+  padding: 16px 14px;
+  border-radius: 12px;
+}
+.item {
+  margin-bottom: 12px;
+}
 
-    .name {
-      font-weight: bold;
-      font-size: 18px;
-    }
+.item-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
 
-    .price {
-      float: right;
-      font-weight: bold;
-    }
+.desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #777;
+}
 
-    .desc {
-      color: #555;
-      font-size: 14px;
-    }
+.price {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
 
     .diet {
       margin-top: 4px;
@@ -124,10 +133,95 @@
       font-size: 14px;
       color: #444;
     }
+
+    .section {
+  padding: 20px 14px;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.nav {
+  padding: 12px 10px;
+  gap: 10px;
+}
+
+.nav button {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border-radius: 20px;
+}
+
+.search-bar input {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.item-name {
+  max-width: 75%;
+}
+
+.price {
+  text-align: right;
+  font-weight: 600;
+}
+
+.header {
+  text-align: center;
+  padding: 28px 16px 18px;
+}
+
+.header h1 {
+  font-family: 'Cormorant', serif;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #777;
+  margin-top: 6px;
+}
+
+.header h1::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: #C8A96A;
+  margin: 8px auto 0;
+}
   </style>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <h1>Olive & Brew Menu</h1>
+  <div class="header">
+  <h1>Olive & Brew</h1>
+  <p>Continental Kitchen</p>
+</div>
 
   <div id="topBar">
     <input
@@ -744,46 +838,59 @@
     }
 
     function createItem(item) {
-      const div = document.createElement("div");
-      div.className = "item";
+     
+  const div = document.createElement("div");
+  div.className = "item";
 
-      const name = document.createElement("div");
-      name.className = "name";
+  // ✅ header (name + price split)
+  const header = document.createElement("div");
+  header.className = "item-header";
 
-      if (item.Price) {
-        name.innerHTML = `${item.Name} <span class="price">&#8377;${item.Price}</span>`;
-      } else if (item.Variants) {
-        const prices = item.Variants.map(v => `${v.Size}: &#8377;${v.Price}`).join(" | ");
-        name.innerHTML = `${item.Name} <span class="price">${prices}</span>`;
-      } else {
-        name.textContent = item.Name;
-      }
+  const name = document.createElement("div");
+  name.className = "item-name";
+  name.textContent = item.Name;
 
-      const desc = document.createElement("div");
-      desc.className = "desc";
-      desc.textContent = item.Description || "";
+  const price = document.createElement("div");
+  price.className = "price";
 
-      const diet = document.createElement("div");
-      diet.className = "diet";
+  if (item.Price) {
+    price.innerHTML = `₹${item.Price}`;
+  } else if (item.Variants) {
+    price.innerHTML = item.Variants
+      .map(v => `${v.Size} ₹${v.Price}`)
+      .join(" | ");
+  }
 
-      let badges = "";
+  header.appendChild(name);
+  header.appendChild(price);
 
-      if (item.Customizable?.Jain) {
-        badges += '<span class="diet-badge">J</span>';
-      }
+  // description
+  const desc = document.createElement("div");
+  desc.className = "desc";
+  desc.textContent = item.Description || "";
 
-      if (item.Customizable?.Swaminarayan) {
-        badges += '<span class="diet-badge">S</span>';
-      }
+  // diet badges
+  const diet = document.createElement("div");
+  diet.className = "diet";
 
-      diet.innerHTML = badges;
+  let badges = "";
+  if (item.Customizable?.Jain) {
+    badges += '<span class="diet-badge">J</span>';
+  }
+  if (item.Customizable?.Swaminarayan) {
+    badges += '<span class="diet-badge">S</span>';
+  }
 
-      div.appendChild(name);
-      div.appendChild(desc);
-      div.appendChild(diet);
+  diet.innerHTML = badges;
 
-      return div;
-    }
+  // final structure
+  div.appendChild(header);
+  div.appendChild(desc);
+  div.appendChild(diet);
+
+  return div;
+}
+    
 
     function itemMatches(item, query) {
       return item.Name.toLowerCase().includes(query) ||
