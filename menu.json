@@ -36,10 +36,10 @@
     "holidays": "Y"
   },
 {
-    "name": "Falafel pockets (2 pieces )",
+    "name": "Falafel pita Sandwich(2 pieces )",
     "price": "229",
     "description": "Falafel bits served in warm pita pockets with hummus and pickles.",
-    "stock": "n",
+    "stock": "y",
     "holidays": "Y"
   },
 
@@ -54,8 +54,8 @@
     "name": "Pan Fried Noodles",
     "price": "329",
     "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
-    "stock": "n",
-    "holidays": "Y"
+    "stock": "y",
+    "holidays": "n"
   },
 {
     "name": "Nutty Butter Vanila Shake",
