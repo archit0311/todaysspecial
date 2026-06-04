@@ -30,14 +30,14 @@
   },
   {
     "name": "Sourdough Bruschetta",
-    "price": "239",
+    "price": "269",
     "description": "Artisanal sourdough, baked crispy, brushed with garlic, freshly chopped tomatoes, olive oil and herbs.",
     "stock": "y",
     "holidays": "Y"
   },
 {
     "name": "Falafel pita Sandwich(2 pieces )",
-    "price": "239",
+    "price": "269",
     "description": "Falafel bits served in warm pita pockets with hummus and pickles.",
     "stock": "y",
     "holidays": "Y"
