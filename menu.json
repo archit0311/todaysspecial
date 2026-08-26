@@ -39,8 +39,8 @@
     "name": "Falafel pita Sandwich(2 pieces )",
     "price": "269",
     "description": "Falafel bits served in warm pita pockets with hummus and pickles.",
-    "stock": "y",
-    "holidays": "Y"
+    "stock": "n",
+    "holidays": "n"
   },
 
   {
@@ -61,7 +61,7 @@
     "name": "Nutty Butter Vanila Shake",
     "price": "209",
     "description": "Creamy vanila & nutty brown butter blended to luxury.",
-    "stock": "y",
+    "stock": "n",
     "holidays": "Y"
   },
 {
