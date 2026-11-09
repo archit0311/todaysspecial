@@ -1,8 +1,8 @@
 [
   {
-    "name": "Broccoli cheddar soup",
-    "price": "249",
-    "description": "Silky ans cheesy soup made from sharp cheddar and broccoli",
+    "name": "Koren Cheese Corn Dog",
+    "price": "259",
+    "description": "Crispy, golden-fried to perfection, and packed with an endlessly stretchy, melty mozzarella cheese pull",
     "stock": "n",
     "holidays": "Y"
   },
@@ -15,8 +15,8 @@
     "holidays": "Y"
   },
   {
-    "name": "Open Wonton Cups(6 pieces)",
-    "price": "279",
+    "name": "Creamcheese Wonton Cups(6 pieces)",
+    "price": "319",
     "description": "Open wonton wrappers topped with asian flavour, velvety cream and umami dipping sauce",
     "stock": "y",
     "holidays": "Y"
@@ -44,17 +44,27 @@
   },
 
   {
-    "name": "Velouté Lemon Ravioli",
-    "price": "379",
-    "description": "Handmade ravioli drizzled with a rich lemon butter sauce.",
+    "name": "4 Cheese Quessadila (8 Pieces) " ,
+    "price": "349",
+    "description": "Toasted tortilla bursting with a molten blend of sharp cheddar, creamy Monterey Jack, mild Colby, and perfectly stretchy mozzarella with thin onions",
     "stock": "n",
     "holidays": "Y"
   },
+
+  {
+    "name": "Messy Fries",
+    "price": "269",
+    "description": "Fries loaded with a rich, spicy, and creamy blend of sauces and perfect seasoning.",
+    "stock": "y",
+    "holidays": "Y"
+  },
+
+  
   {
     "name": "Pan Fried Noodles",
     "price": "329",
     "description": "Crispy golden brown noodle served with a flavourful savoury gravy.",
-    "stock": "y",
+    "stock": "n",
     "holidays": "n"
   },
 {
