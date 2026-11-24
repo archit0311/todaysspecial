@@ -32,7 +32,7 @@
     "name": "Sourdough Bruschetta",
     "price": "269",
     "description": "Artisanal sourdough, baked crispy, brushed with garlic, freshly chopped tomatoes, olive oil and herbs.",
-    "stock": "y",
+    "stock": "n",
     "holidays": "Y"
   },
 {
