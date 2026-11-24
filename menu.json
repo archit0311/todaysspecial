@@ -25,7 +25,7 @@
     "name": "Sourdough Herbs Garlic Bread",
     "price": "199",
     "description": "Artisanal sourdough, naturally fermented for a rich tangy flavor, baked crispy with garlic butter and aromatic herbs.",
-    "stock": "y",
+    "stock": "n",
     "holidays": "y"
   },
   {
